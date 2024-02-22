@@ -40,7 +40,9 @@ nav{
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5% 2.5%;
+  padding: 0.5% 4%;
+  height: 45px;
+  margin-bottom: 10%;
 }
 nav img{
   cursor: pointer;
@@ -81,14 +83,14 @@ nav .navButtonsContainer #backButton:hover{
     align-items: flex-end;
   }
 
-  nav > img{
+  #hamburgerMenuIcon{
     display: none;
   }
 
   nav .navButtonsContainer{
     display: flex;
     flex-direction: row;
-    padding: 0;
+    padding-top: 0.3%;
     min-height: 36px;
     height: 100%;
     gap: 2%;
