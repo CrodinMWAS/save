@@ -1,8 +1,5 @@
 <template>
   <Navbar></Navbar>
-  <!-- <router-link to="/">Home</router-link>
-  <router-link to="/AboutUs">About</router-link>
-  <router-link to="/Contact">Contact</router-link> -->
   <router-view></router-view>
 </template>
 
@@ -49,7 +46,7 @@ nav img{
   cursor: pointer;
 }
 
-nav #navButtonsContainer{
+nav .navButtonsContainer{
   display: none;
   /* display: flex; */
   flex-direction: column;
@@ -59,22 +56,26 @@ nav #navButtonsContainer{
   align-items: center;
   padding-top: 5%;
 }
+.showButtons{
+  display: flex !important;
+}
 
-nav #navButtonsContainer h2{
+
+nav .navButtonsContainer h2{
   margin: 0;
   padding: 0;
   width: fit-content;
 }
 
-nav #navButtonsContainer #backButton{
+nav .navButtonsContainer #backButton{
   transform: rotate(-90deg);
   align-self: flex-end;
 }
-nav #navButtonsContainer #backButton:hover{
+nav .navButtonsContainer #backButton:hover{
   cursor: pointer;
 }
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 600px){
   nav{
     gap: 3%;
     align-items: flex-end;
@@ -84,7 +85,7 @@ nav #navButtonsContainer #backButton:hover{
     display: none;
   }
 
-  nav #navButtonsContainer{
+  nav .navButtonsContainer{
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -93,10 +94,10 @@ nav #navButtonsContainer #backButton:hover{
     gap: 2%;
   }
 
-  nav #navButtonsContainer h2{
+  nav .navButtonsContainer h2{
     font-size: medium;
   }
-  nav #navButtonsContainer #backButton{
+  nav .navButtonsContainer #backButton{
     display: none;
   }
 }
