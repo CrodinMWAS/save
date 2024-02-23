@@ -6,30 +6,40 @@
             <p>Dive into culinary wonders with DineEase. We curate top-rated restaurants, each with distinct flavors and ambiance.
                 From international dishes to traditional delights and gastronomic adventures, find your perfect spot with DineEase.</p>
             <div id="exploreButton">
-                    <img src="../assets/images/Search Icon.png" alt="This is a search icon." title="This is a search icon.">
+                    <img src="../assets/images/Search Iconvector.svg" alt="This is a search icon." title="This is a search icon.">
                     <h3>Explore Restaurants</h3>
             </div>
         </div>
         <div id="purpleStrip"></div>
         <div id="lightPurpleStrip"></div>
         <div id="heroImageContainer">
-            <img src="../assets/images/" alt="">
+            <img src="../assets/images/Hero Illustration.png" alt="This is a cool illustration of a man eating a meal and rating it 5 stars." title="This is a cool illustration of a man eating a meal and rating it 5 stars.">
         </div>
+        <hr>
     </div>
+    <FeaturedRestaurants></FeaturedRestaurants>
 </template>
 
 <script>
-export default {
+import FeaturedRestaurants from '../components/FeaturedRestaurants.vue';
 
+export default {
+    data() {
+        return {
+        }
+    },
+    components:{
+        FeaturedRestaurants
+    }
 }
 </script>
 
 <style scoped>
     #hero{
-        background-color: red;
-        height: calc(100vh - 45px);
+        height: calc(100vh - 101px);
         width: 100%;
         padding: 0 4%;
+        overflow: hidden;
     }
 
     #hero #heroTextContainer{
@@ -42,4 +52,40 @@ export default {
         margin: 0;
         font-size: 220%;
     }
+
+/*----------  The style of the explore Button  ----------*/
+
+    #hero #heroTextContainer #exploreButton{
+        display: flex;
+        align-self: flex-start;
+        border-radius: 10px;
+        background-color: var(--purpleColor);
+        padding: 0 5%;
+        color: white;
+    }
+
+    #hero #heroTextContainer #exploreButton h3{
+        font-weight: 500;
+        font-size: medium;
+        margin-left: 10px;
+    }
+
+
+/*----------  Style of the Hero Illustration/Image  ----------*/
+
+    #hero #heroImageContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #hero #heroImageContainer img{
+        width: 130%;
+    }
+
+    #heroImageContainer{
+        height: fit-content;
+        width: fit-content;
+    }
+
 </style>

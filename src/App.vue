@@ -1,12 +1,17 @@
 <template>
-  <Navbar></Navbar>
-  <router-view></router-view>
+  <Navbar @toggleOverlay="this.hidePage = !this.hidePage"></Navbar>
+  <router-view v-if="!this.hidePage"></router-view>
 </template>
 
 <script>
 import Navbar from '../src/components/Navbar.vue';
 
 export default{
+  data() {
+    return {
+      hidePage: false
+    }
+  },
   components:{
     Navbar
   }
@@ -14,10 +19,16 @@ export default{
 </script>
 
 <style>
+
+/*=============================================
+=            General/Global Styling            =
+=============================================*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root{
   --blackColor: #212121;
+  --greyishWhiteColor: #EAEAEA;
+  --purpleColor: #7c3aed;
 }
 
 body{
@@ -34,13 +45,18 @@ a{
 *{
   box-sizing: border-box;
 }
+/*=====  End of General/Global Styling  ======*/
 
+
+/*=============================================
+=            Style of the Navbar            =
+=============================================*/
 nav{
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5% 4%;
+  padding: 35px 4%;
   height: 45px;
   margin-bottom: 10%;
 }
@@ -59,6 +75,9 @@ nav .navButtonsContainer{
   padding-top: 5%;
 }
 .showButtons{
+  height: 100vh;
+}
+.showButtons .navButtonsContainer{
   display: flex !important;
 }
 
@@ -80,7 +99,6 @@ nav .navButtonsContainer #backButton:hover{
 @media screen and (min-width: 600px){
   nav{
     gap: 3%;
-    align-items: flex-end;
   }
 
   #hamburgerMenuIcon{
@@ -103,6 +121,5 @@ nav .navButtonsContainer #backButton:hover{
     display: none;
   }
 }
-
-
+/*=====  End of Style of the Navbar  ======*/
 </style>
