@@ -29,6 +29,7 @@ export default{
   --blackColor: #212121;
   --greyishWhiteColor: #EAEAEA;
   --purpleColor: #7c3aed;
+  --lightPurpleColor: #ede9fe;
 }
 
 body{
@@ -58,8 +59,9 @@ nav{
   align-items: center;
   padding: 35px 4%;
   height: 45px;
-  margin-bottom: 10%;
+  margin-bottom: 35px;
 }
+
 nav img{
   cursor: pointer;
 }

@@ -17,26 +17,141 @@
         </div>
         <hr>
     </div>
-    <FeaturedRestaurants></FeaturedRestaurants>
+
+
+
+    <div id="featuredRestaurants">
+        <div id="headerContainer">
+            <h1>Featured Restaurants</h1>
+            <h2>Discover Unforgettable Dining Destinations</h2>
+        </div>
+        <div id="cardContainer">
+            <!-- {{ apiData }} -->
+            <RestaurantCard v-for="(data, index) in apiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
+        </div>
+    </div>
+
+    <div id="testimonials">
+        <div id="testimonialHeader">
+            <img id="decorQuote" src="../assets/images/Quote markvector.svg" alt="This is a decorative quote.">
+            <h1>Delightful Experiences Shared by Our Guests</h1>
+        </div>
+        <div id="testimonialCardContainer">
+
+        </div>
+    </div>
+
+    
 </template>
 
 <script>
-import FeaturedRestaurants from '../components/FeaturedRestaurants.vue';
+import RestaurantCard from '../components/RestaurantCard.vue';
 
 export default {
     data() {
         return {
+            apiData: []
         }
     },
     components:{
-        FeaturedRestaurants
-    }
+        RestaurantCard
+    },
+    mounted() {
+        fetch("https://es2025-s17-hu-r1-backend.onrender.com/api/v1/restaurants/top-rated")
+        .then(res => res.json())
+        .then(data => {
+            this.apiData = data
+        })
+        .catch(err => console.log(err))
+    },
 }
 </script>
 
-<style scoped>
+<style>
+
+#testimonials #testimonialHeader{
+    display: flex;
+    align-items: flex-end;
+    min-height: 120px;
+}
+
+#testimonials #testimonialHeader #decorQuote{
+    position: absolute;
+    height: 120px;
+}
+
+#testimonials #testimonialHeader h1{
+    margin: 0;
+}
+
+/*=========================================================================================
+=            Style of The Restaurant Cards (Used in Multiple Places in the page)            =
+===========================================================================================*/
+
+    .card{
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0px 3px 7.5px rgba(128, 128, 128, 0.3);
+    }
+    
+    .cardPicture{
+        width: 100%;
+        aspect-ratio: 2;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+    }
+
+    .cardInfoContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardTopRow{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .restaurantName{
+        width: fit-content;
+        font-size: larger;
+    }
+
+    .restaurantRatings{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+    .restaurantRatings img{
+        height: 15px;
+    }
+    
+    .restaurantDescription{
+        margin: 0;
+        font-size: small;
+        color: grey;
+    }
+
+    .restaurantLink{
+        color: var(--purpleColor);
+        align-self: flex-end;
+        font-size: small;
+        margin-top: 10px;
+    }
+
+/*=====  End of Style of The Restaurant Cards  ======*/
+
+
+/*=============================================
+=            Style Of the Hero Section            =
+=============================================*/
+
     #hero{
-        height: calc(100vh - 101px);
+        height: calc(100vh - 105px);
         width: 100%;
         padding: 0 4%;
         overflow: hidden;
@@ -77,15 +192,60 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        height: fit-content;
+        width: fit-content;
     }
 
     #hero #heroImageContainer img{
         width: 130%;
     }
 
-    #heroImageContainer{
-        height: fit-content;
-        width: fit-content;
+/*=====  End of Style Of the Hero Section  ======*/
+
+
+/*=================================================================
+=            Style of The Featured Restaurants Section            =
+=================================================================*/
+
+    #featuredRestaurants #headerContainer{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
+
+    #featuredRestaurants #headerContainer h1{
+        font-weight: bold;
+        font-size: xx-large;
+        margin: 10px;
+    }
+
+    #featuredRestaurants #headerContainer h2{
+        margin: 10px;
+        margin-bottom: 50px;
+        font-weight: normal;
+        font-size: medium;
+    }
+
+    #featuredRestaurants #cardContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+/*=====  End of Style of The Featured Restaurants Section  ======*/
+
+/*========================================================
+=            Style of the Testimonials section            =
+=========================================================*/
+
+    #testimonials{
+        margin-top: 50px;
+        background-color: var(--lightPurpleColor);
+        height: 100vh;
+    }
+
+/*=====  End of Style of the Testimonials section  ======*/
+
+
 
 </style>
