@@ -376,7 +376,6 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: blue;
         border-radius: 5px;
         background-color: var(--greyishWhiteColor);
         height: 50px;
