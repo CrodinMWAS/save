@@ -127,32 +127,6 @@ export default {
 </script>
 
 <style>
-/*============================================================================
-=            Style Of Headers (Used in Multiple Places in the page)            =
-==============================================================================*/
-
-    .headerContainer{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .headerContainer h1{
-        font-weight: bold;
-        font-size: xx-large;
-        margin: 10px;
-    }
-
-    .headerContainer h2{
-        margin: 10px;
-        margin-bottom: 50px;
-        font-weight: normal;
-        font-size: medium;
-    }
-
-/*=====  End of Style Of Headers (Used in Multiple Places in the page)  ======*/
-
-
 /*=========================================================================================
 =            Style of The Restaurant Cards (Used in Multiple Places in the page)            =
 ===========================================================================================*/

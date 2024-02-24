@@ -2,7 +2,11 @@
     <div id="footer">
         <div id="infoColumn">
             <img src="../assets/images/Logomarkvector.svg" alt="This is our logo." title="This is our logo.">
-            <h3>Privacy Policy</h3>
+            <h3>
+                <router-link to="Privacy-Policy">
+                    Privacy Policy
+                </router-link>
+            </h3>
             <div id="contactContainer">
                 <h3>+36 30 123 4567</h3>
                 <h3>support@dineease.com</h3>

@@ -1,6 +1,7 @@
 import HomePage from '@/views/HomePage.vue'
 import AboutUs from '@/views/AboutUs.vue'
 import Contact from '@/views/Contact.vue'
+import PrivacyPolicy from '@/views/PrivacyPolicy.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/Contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/Privacy-Policy',
+      name: 'Privacy-Policy',
+      component: PrivacyPolicy
     }
   ]
 })

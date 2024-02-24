@@ -49,6 +49,32 @@ a{
 *{
   box-sizing: border-box;
 }
+
+/*============================================================================
+=            Style Of Headers (Used in Multiple Places in the Project)            =
+==============================================================================*/
+
+  .headerContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .headerContainer h1{
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 10px;
+  }
+
+  .headerContainer h2{
+    margin: 10px;
+    margin-bottom: 50px;
+    font-weight: normal;
+    font-size: medium;
+  }
+
+/*=====  End of Style Of Headers (Used in Multiple Places in the Project)  ======*/
+
 /*=====  End of General/Global Styling  ======*/
 
 
@@ -141,6 +167,10 @@ nav .navButtonsContainer #backButton:hover{
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+#footer #infoColumn a{
+  color: white;
 }
 
 #footer #infoColumn h3, #footer #infoColumn h5{
