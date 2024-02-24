@@ -59,9 +59,10 @@
         </div>
         <div class="cardContainer">
             <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
-            <div id="showMoreButton" @click="this.showMore = !this.showMore" :style="{ marginBottom: showMore ? '0' : '35px' }" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
+            <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" :style="{ marginBottom: showMore ? '0' : '35px' }" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
             <div id="allRestaurantsContainer" v-show="this.showMore">
                 <RestaurantCard v-for="(data, index) in moreApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
+                <div class="toggleRestaurantsButton" @click="this.showMore = false" ><h5>Show Less</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
             </div>
         </div>
     </div>
@@ -295,8 +296,7 @@ export default {
     #testimonials{
         margin-top: 50px;
         background-color: var(--lightPurpleColor);
-        height: 100vh;
-        padding: 0 4%;
+        padding: 20% 4% 20% 4%;
     }
 
     #testimonials #testimonialHeader{
@@ -438,21 +438,34 @@ export default {
 
 /*----------  End of the Style of the SearchArea  ----------*/
 
-    #showMoreButton{
+    .toggleRestaurantsButton{
         display: flex;
         align-items: center;
         gap: 10px;
         color: var(--purpleColor);
     }
 
-    #showMoreButton:hover{
+    .toggleRestaurantsButton:hover{
         cursor: pointer;
     }
 
-    #showMoreButton svg{
+    .toggleRestaurantsButton svg {
         fill: var(--purpleColor);
     }
 
+    #allRestaurantsContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    #allRestaurantsContainer .toggleRestaurantsButton{
+        align-self: center;
+    }
+    
+    .rotatedIcon{
+        transform: rotate(180deg);
+    }
 
 /*=====  End of Style of the Restaurant Search Area  ======*/
 
