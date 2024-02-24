@@ -25,6 +25,8 @@
             <h1>Featured Restaurants</h1>
             <h2>Discover Unforgettable Dining Destinations</h2>
         </div>
+        <div id="bigCircle1"></div>
+        <div id="bigCircle2"></div>
         <div class="cardContainer">
             <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
         </div>
