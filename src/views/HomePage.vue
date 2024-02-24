@@ -124,51 +124,6 @@ export default {
 </script>
 
 <style>
-#searchArea{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    gap: 15px;
-}
-
-#searchArea #searchBar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-    border-radius: 5px;
-    background-color: var(--greyishWhiteColor);
-    height: 50px;
-    padding: 0 2.5%;
-}
-
-#searchArea #searchBar #searchBarSearchIcon{
-    fill: black;
-}
-
-#searchArea #searchBar input{
-    border: none;
-    background-color: var(--greyishWhiteColor);
-}
-#searchArea #searchBar input:focus{
-    outline: none;
-}
-
-#searchArea #searchButton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:  var(--lightPurpleColor);
-    border-radius: 5px;
-    height: 40px;
-    aspect-ratio: 1;
-    align-self: center;
-}
-
-#searchArea #searchButton svg{
-    fill: var(--purpleColor);
-}
-
 /*============================================================================
 =            Style Of Headers (Used in Multiple Places in the page)            =
 ==============================================================================*/
@@ -429,7 +384,57 @@ export default {
 
     #allRestaurants{
         padding-top: 50px;
+        padding: 50px 4% 4% 4%;
     }
+
+/*----------  Style of the SearchArea  ----------*/
+
+    #searchArea{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+        gap: 15px;
+    }
+
+    #searchArea #searchBar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        border-radius: 5px;
+        background-color: var(--greyishWhiteColor);
+        height: 50px;
+        padding: 0 2.5%;
+    }
+
+    #searchArea #searchBar #searchBarSearchIcon{
+        fill: black;
+    }
+
+    #searchArea #searchBar input{
+        border: none;
+        background-color: var(--greyishWhiteColor);
+    }
+    #searchArea #searchBar input:focus{
+        outline: none;
+    }
+
+    #searchArea #searchButton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:  var(--lightPurpleColor);
+        border-radius: 5px;
+        height: 40px;
+        aspect-ratio: 1;
+        align-self: center;
+    }
+
+    #searchArea #searchButton svg{
+        fill: var(--purpleColor);
+    }
+
+/*----------  End of the Style of the SearchArea  ----------*/
 
     #showMoreButton{
         display: flex;
@@ -448,7 +453,6 @@ export default {
 
 
 /*=====  End of Style of the Restaurant Search Area  ======*/
-
 
 
 </style>

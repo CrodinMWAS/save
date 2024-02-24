@@ -1,7 +1,7 @@
 <template>
   <Navbar @toggleOverlay="this.hidePage = !this.hidePage"></Navbar>
   <router-view v-if="!this.hidePage"></router-view>
-  <Footer></Footer>
+  <Footer v-if="!this.hidePage"></Footer>
 </template>
 
 <script>
