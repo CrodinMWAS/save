@@ -36,7 +36,6 @@ export default{
 }
 
 body{
-  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -47,6 +46,7 @@ a{
 }
 
 *{
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 

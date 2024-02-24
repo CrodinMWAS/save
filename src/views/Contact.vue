@@ -26,11 +26,12 @@
         </div>
         <div id="formContainer">
             <form action="">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email">
+                <input type="number" placeholder="Phone Number">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <button>Send Message</button>
             </form>
         </div>
     </div>
@@ -56,7 +57,7 @@ export default {
     #contactInformationContainer .headerContainer h1{
         font-size: x-large;
     }
-    #contactInformationContainer .headerContainer h2, #informationContainer .headerContainer h2{
+    #contactInformationContainer .headerContainer h2{
         margin: 0;
     }
 
@@ -128,6 +129,64 @@ export default {
     }
 
 /*=====  End of Style of the Purple box (conctactInformationContainer)  ======*/
+
+
+/*==================================================================
+=            Style of the feedback/information container            =
+===================================================================*/
+
+    #informationContainer .headerContainer h2{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    #informationContainer{
+        padding: 0 4%;
+    }
+
+    #formContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*----------  Style of the form elements  ----------*/
+
+    #formContainer input, #formContainer textarea{
+        border: none;
+        background-color: var(--greyishWhiteColor);
+        resize: none;
+        border-radius: 5px;
+        padding: 2%;
+    }
+    #formContainer input:nth-child(odd){
+        margin: 2.5% 2.5% 2.5% 0;
+    }
+    #formContainer input:nth-child(even){
+        margin: 2.5% 0 2.5% 2.5%;
+    }
+    #formContainer input{
+        width: 45%;
+    }
+    #formContainer textarea{
+        margin-top: 2.5%;
+        width: 95%;
+    }
+    #formContainer input:focus, #formContainer textarea:focus{
+        outline: none;
+    }
+    
+    #formContainer button{
+        border: 0;
+        border-radius: 5px;
+        padding: 5% 10%;
+        margin: 20% 0;
+        background-color: var(--purpleColor);
+        color: white;
+    }
+    /*----------  End of the Style of the form elements  ----------*/
+    
+/*=====  End of Style of the feedback/information container  ======*/
+
 
 
     
