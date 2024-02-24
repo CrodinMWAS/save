@@ -5,9 +5,9 @@
             <h1>DineEase: Exceptional Dining Awaits.</h1>
             <p>Dive into culinary wonders with DineEase. We curate top-rated restaurants, each with distinct flavors and ambiance.
                 From international dishes to traditional delights and gastronomic adventures, find your perfect spot with DineEase.</p>
-            <div id="exploreButton">
-                    <img src="../assets/images/Search Iconvector.svg" alt="This is a search icon." title="This is a search icon.">
-                    <h3>Explore Restaurants</h3>
+            <div id="exploreButton" @click="this.$refs.restaurants.scrollIntoView({behavior: 'smooth'})">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z"/></svg>
+                <h3>Explore Restaurants</h3>
             </div>
         </div>
         <div id="purpleStrip"></div>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div id="allRestaurants">
+    <div id="allRestaurants" ref="restaurants">
         <div class="headerContainer">
             <h1>Find Your Perfect Dining Spot</h1>
             <h2>Search by Cuisine, Location, or Name</h2>
@@ -50,7 +50,7 @@
                 <div id="searchBar">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" fill="black"/></svg>
                     <input type="text" placeholder="Search for restaurants">
-                    <img src="../assets/images/Filter Iconvector.svg" alt="">
+                    <svg id="filterIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74805 5.31713H3.5207M14.2527 5.31713H9.84492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.74805 10.6492L6.29953 10.6492M14.2527 10.6492L12.5758 10.6492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="6.7317" cy="5.35083" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/><ellipse cx="9.36549" cy="10.6492" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/></svg>
                 </div>
                 <div id="searchButton">
                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
@@ -70,7 +70,6 @@
 </template>
 
 <script>
-// TODO Do the explore btn hover and bookmark
 import RestaurantCard from '../components/RestaurantCard.vue';
 import TestimonialCard from '../components/TestimonialCard.vue';
 
@@ -177,6 +176,7 @@ export default {
         justify-content: flex-end;
         gap: 5px;
     }
+
     .restaurantRatings img{
         height: 15px;
     }
@@ -192,6 +192,12 @@ export default {
         align-self: flex-end;
         font-size: small;
         margin-top: 10px;
+    }
+    .restaurantLink:hover{
+        color: var(--blackColor);
+    }
+    .restaurantLink:active{
+        color: var(--lightPurpleColor);
     }
 
 /*=====  End of Style of The Restaurant Cards  ======*/
@@ -224,10 +230,30 @@ export default {
     #hero #heroTextContainer #exploreButton{
         display: flex;
         align-self: flex-start;
+        align-items: center;
         border-radius: 10px;
         background-color: var(--purpleColor);
         padding: 0 5%;
         color: white;
+        transition: all 0.2s ease-in-out;
+        user-select: none;
+    }
+    #hero #heroTextContainer #exploreButton svg{
+        fill: white;
+    }
+    #hero #heroTextContainer #exploreButton:hover svg{
+        fill: black;
+    }
+    #hero #heroTextContainer #exploreButton:hover {
+        cursor: pointer;
+        scale: 1.2;
+        background-color: var(--greyishWhiteColor);
+        color: var(--blackColor);
+        outline: 2px solid var(--purpleColor);
+    }
+    #hero #heroTextContainer #exploreButton:active{
+        scale: 1.1;
+        outline: 2px solid var(--lightPurpleColor);
     }
 
     #hero #heroTextContainer #exploreButton h3{
@@ -235,7 +261,6 @@ export default {
         font-size: medium;
         margin-left: 10px;
     }
-
 
 /*----------  Style of the Hero Illustration/Image  ----------*/
 
@@ -249,6 +274,7 @@ export default {
 
     #hero #heroImageContainer img{
         width: 130%;
+        aspect-ratio: 1;
     }
 
 /*=====  End of Style Of the Hero Section  ======*/
@@ -313,7 +339,15 @@ export default {
 =            Style Of The Testimonial Card            =
 ======================================================*/
 
+    #testimonialCardContainer{
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
     #testimonialCardContainer .experienceCard{
+        background-color: #F9F9F9;
         display: flex;
         padding: 5% 2.5%;
         gap: 10px;
@@ -386,16 +420,18 @@ export default {
         padding: 0 2.5%;
     }
 
-    #searchArea #searchBar #searchBarSearchIcon{
-        fill: black;
-    }
-
     #searchArea #searchBar input{
         border: none;
         background-color: var(--greyishWhiteColor);
+        width: 90%;
     }
     #searchArea #searchBar input:focus{
         outline: none;
+    }
+
+    #searchArea #searchBar #filterIcon:hover{
+        scale: 1.2;
+        cursor: pointer;
     }
 
     #searchArea #searchButton{
@@ -407,6 +443,15 @@ export default {
         height: 40px;
         aspect-ratio: 1;
         align-self: center;
+        user-select: none;
+        transition: all 0.3s ease-in-out;
+    }
+    #searchArea #searchButton:hover{
+        cursor: pointer;
+        scale: 1.2;
+    }
+    #searchArea #searchButton:active{
+        scale: 1.1;
     }
 
     #searchArea #searchButton svg{
@@ -420,16 +465,26 @@ export default {
         align-items: center;
         gap: 10px;
         color: var(--purpleColor);
+        user-select: none;
     }
-
     .toggleRestaurantsButton:hover{
         cursor: pointer;
+        color: var(--blackColor);
+    }
+    .toggleRestaurantsButton:active{
+        color: var(--lightPurpleColor);
     }
 
     .toggleRestaurantsButton svg {
         fill: var(--purpleColor);
     }
-
+    .toggleRestaurantsButton:hover svg{
+        fill: black;
+    }
+    .toggleRestaurantsButton:active svg{
+        fill: var(--lightPurpleColor);
+    }
+    
     #allRestaurantsContainer{
         display: flex;
         flex-direction: column;

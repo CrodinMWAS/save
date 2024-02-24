@@ -95,6 +95,7 @@ export default {
         gap: 20px;
         align-items: flex-start;
     }
+    
     #contactInformationContainer #informationContainer .row h1{
         font-size: smaller;
         font-weight: normal;
@@ -182,12 +183,22 @@ export default {
         margin: 20% 0;
         background-color: var(--purpleColor);
         color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    #formContainer button:hover{
+        cursor: pointer;
+        background-color: var(--lightPurpleColor);
+        outline: 2px solid var(--purpleColor);
+        color: black;
+        scale: 1.2;
+    }
+    #formContainer button:active{
+        scale: 1.1;
+        outline: 2px solid var(--lightPurpleColor);
     }
     /*----------  End of the Style of the form elements  ----------*/
     
 /*=====  End of Style of the feedback/information container  ======*/
-
-
 
     
 </style>

@@ -26,35 +26,35 @@ export default{
 /*=============================================
 =            General/Global Styling            =
 =============================================*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-:root{
-  --blackColor: #212121;
-  --greyishWhiteColor: #EAEAEA;
-  --purpleColor: #7c3aed;
-  --lightPurpleColor: #ede9fe;
-}
+  :root{
+    --blackColor: #212121;
+    --greyishWhiteColor: #EAEAEA;
+    --purpleColor: #7c3aed;
+    --lightPurpleColor: #ede9fe;
+  }
 
-body{
-  margin: 0;
-  padding: 0;
-}
+  body{
+    margin: 0;
+    padding: 0;
+  }
 
-a{
-  text-decoration: none;
-  color: var(--blackColor);
-}
+  a{
+    text-decoration: none;
+    color: var(--blackColor);
+  }
 
-*{
-  font-family: "Inter", sans-serif;
-  box-sizing: border-box;
-}
+  *{
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+  }
 
-.socialIconsContainer{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
+  .socialIconsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
 
 /*============================================================================
 =            Style Of Headers (Used in Multiple Places in the Project)            =
@@ -87,77 +87,90 @@ a{
 /*=============================================
 =            Style of the Navbar            =
 =============================================*/
-nav{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 35px 4%;
-  height: 45px;
-  margin-bottom: 35px;
-}
-
-nav img{
-  cursor: pointer;
-}
-
-nav .navButtonsContainer{
-  display: none;
-  /* display: flex; */
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  gap: 5%;
-  align-items: center;
-  padding-top: 5%;
-}
-.showButtons{
-  height: 100vh;
-}
-.showButtons .navButtonsContainer{
-  display: flex !important;
-}
-
-
-nav .navButtonsContainer h2{
-  margin: 0;
-  padding: 0;
-  width: fit-content;
-}
-
-nav .navButtonsContainer #backButton{
-  transform: rotate(-90deg);
-  align-self: flex-end;
-}
-nav .navButtonsContainer #backButton:hover{
-  cursor: pointer;
-}
-
-@media screen and (min-width: 600px){
   nav{
-    gap: 3%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 4%;
+    height: 45px;
+    margin-bottom: 35px;
   }
 
-  #hamburgerMenuIcon{
-    display: none;
+  nav img:hover{
+    cursor: pointer;
   }
 
   nav .navButtonsContainer{
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.3%;
-    min-height: 36px;
-    height: 100%;
-    gap: 2%;
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 5%;
+    align-items: center;
+    padding-top: 5%;
+  }
+  .showButtons{
+    height: 100vh;
+  }
+  .showButtons .navButtonsContainer{
+    display: flex !important;
   }
 
   nav .navButtonsContainer h2{
-    font-size: medium;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
   }
+  nav .navButtonsContainer h2:hover{
+    cursor: pointer;
+    scale: 1.2;
+  }
+  nav .navButtonsContainer h2:active{
+    scale: 1.1;
+    color: var(--lightPurpleColor);
+  }
+  
   nav .navButtonsContainer #backButton{
-    display: none;
+    transform: rotate(-90deg);
+    align-self: flex-end;
   }
-}
+  nav .navButtonsContainer #backButton:hover{
+    cursor: pointer;
+    scale: 1.2;
+  }
+  nav .navButtonsContainer #backButton:active{
+    scale: 1.1;
+    color: var(--lightPurpleColor);
+  }
+
+  @media screen and (min-width: 600px){
+    nav{
+      gap: 3%;
+    }
+
+    #hamburgerMenuIcon{
+      display: none;
+    }
+
+    nav .navButtonsContainer{
+      display: flex;
+      flex-direction: row;
+      padding-top: 0.3%;
+      min-height: 36px;
+      height: 100%;
+      gap: 2%;
+    }
+
+    nav .navButtonsContainer h2{
+      font-size: medium;
+    }
+    nav .navButtonsContainer #backButton{
+      display: none;
+    }
+  }
 /*=====  End of Style of the Navbar  ======*/
 
 
@@ -165,31 +178,38 @@ nav .navButtonsContainer #backButton:hover{
 =            Style Of the Footer            =
 =============================================*/
 
-#footer{
-  background-color: black;
-  color: var(--greyishWhiteColor);
-  padding: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  #footer{
+    background-color: black;
+    color: var(--greyishWhiteColor);
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-#footer #infoColumn a{
-  color: white;
-}
+  #footer #infoColumn a{
+    color: white;
+  }
+  #footer #infoColumn a:hover{
+    cursor: pointer;
+    color: var(--purpleColor)
+  }
+  #footer #infoColumn a:active{
+    color: var(--blackColor)
+  }
 
-#footer #infoColumn h3, #footer #infoColumn h5{
-  font-weight: normal;
-}
+  #footer #infoColumn h3, #footer #infoColumn h5{
+    font-weight: normal;
+  }
 
-#footer #infoColumn h5{
-  color: grey;
-}
+  #footer #infoColumn h5{
+    color: grey;
+  }
 
-#footer #socialsColumn{
-  width: 100%;
-}
+  #footer #socialsColumn{
+    width: 100%;
+  }
 
 /*=====  End of Style Of the Footer  ======*/
 

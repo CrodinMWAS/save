@@ -2,7 +2,7 @@
     <div id="footer">
         <div id="infoColumn">
             <img src="../assets/images/Logomarkvector.svg" alt="This is our logo." title="This is our logo.">
-            <h3>
+            <h3 @click="scrollToTop()">
                 <router-link to="Privacy-Policy">
                     Privacy Policy
                 </router-link>
@@ -26,7 +26,11 @@
 
 <script>
 export default {
-    
+    methods: {
+        scrollToTop(){
+            window.scrollTo(0, 0);
+        }
+    },
 }
 </script>
 
