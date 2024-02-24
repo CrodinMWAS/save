@@ -78,35 +78,6 @@ export default {
 
 <style>
 
-#connectionContainer{
-    width: 100%;
-    height: 40vh;
-    background-color: var(--purpleColor);
-    color: white;
-    padding: 20px 4%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.67em;
-}
-
-#connectionContainer > h1{
-    margin: 0;
-}
-
-#connectionContainer #connectionButton{
-    background-color: var(--greyishWhiteColor);
-    border-radius: 5px;
-    padding: 1% 5%;
-    color: var(--purpleColor);
-}
-
-#connectionContainer #connectionButton h1{
-    font-size: medium;
-}
-
 /*=============================================
 =            Style of the Timeline            =
 =============================================*/
@@ -232,6 +203,42 @@ export default {
     }
 
 /*=====  End of Style of the Employee section  ======*/
+
+
+/*=============================================
+=            Style of the connection section            =
+=============================================*/
+
+#connectionContainer{
+    width: 100%;
+    height: 40vh;
+    background-color: var(--purpleColor);
+    color: white;
+    padding: 20px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.67em;
+}
+
+#connectionContainer > h1{
+    margin: 0;
+}
+
+#connectionContainer #connectionButton{
+    background-color: var(--greyishWhiteColor);
+    border-radius: 5px;
+    padding: 1% 5%;
+    color: var(--purpleColor);
+}
+
+#connectionContainer #connectionButton h1{
+    font-size: medium;
+}
+
+/*=====  End of Style of the connection section  ======*/
 
 
 

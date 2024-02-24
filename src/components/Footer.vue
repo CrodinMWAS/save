@@ -15,7 +15,7 @@
         </div>
         <div id="socialsColumn">
             <h2>Follow Us</h2>
-            <div id="socialIconsContainer">
+            <div class="socialIconsContainer">
                 <img src="../assets/images/Facebook Iconvector.svg" alt="This is an icon to our Facebook page" title="This is an icon to our Facebook page">
                 <img src="../assets/images/Instagram Iconvector.svg" alt="This is an icon to our Instagram page" title="This is an icon to our Instagram page">
                 <img src="../assets/images/Twitter Iconvector.svg" alt="This is an icon to our Twitter page" title="This is an icon to our Twitter page">

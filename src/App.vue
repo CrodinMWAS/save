@@ -50,6 +50,12 @@ a{
   box-sizing: border-box;
 }
 
+.socialIconsContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 /*============================================================================
 =            Style Of Headers (Used in Multiple Places in the Project)            =
 ==============================================================================*/
@@ -183,12 +189,6 @@ nav .navButtonsContainer #backButton:hover{
 
 #footer #socialsColumn{
   width: 100%;
-}
-
-#footer #socialsColumn #socialIconsContainer{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 
 /*=====  End of Style Of the Footer  ======*/
