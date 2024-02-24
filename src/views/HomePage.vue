@@ -37,7 +37,7 @@
             <h1>Delightful Experiences Shared by Our Guests</h1>
         </div>
         <div id="testimonialCardContainer">
-
+            <TestimonialCard v-for="(testimonial, index) in this.testimonials" :key="index" :experience="testimonial.experience" :contributor="testimonial.contributor"></TestimonialCard>
         </div>
     </div>
 
@@ -46,16 +46,32 @@
 
 <script>
 import RestaurantCard from '../components/RestaurantCard.vue';
+import TestimonialCard from '../components/TestimonialCard.vue';
 
 export default {
     data() {
         return {
-            apiData: []
+            apiData: [],
+            testimonials: [
+                {
+                    experience: "Exquisite flavors, impeccable service, and a memorable ambiance – DineEase made our celebration truly special!",
+                    contributor: "Robert & Emily"
+                },
+                {
+                    experience: "DineEase guided us to hidden gems we never knew existed! We've become food adventurers, thanks to this platform.",
+                    contributor: "Lisa & Mark"
+                },
+                {
+                    experience: "With DineEase, we've uncovered culinary treasures right in our city. Every dining recommendation feels like an exclusive invitation to a world of flavors. We thought we knew our local dining scene, but DineEase introduced us to so much more.",
+                    contributor: "Emma & Jacob"
+                },
+            ]
         }
     },
     components:{
-        RestaurantCard
-    },
+    RestaurantCard,
+    TestimonialCard
+},
     mounted() {
         fetch("https://es2025-s17-hu-r1-backend.onrender.com/api/v1/restaurants/top-rated")
         .then(res => res.json())
@@ -68,21 +84,6 @@ export default {
 </script>
 
 <style>
-
-#testimonials #testimonialHeader{
-    display: flex;
-    align-items: flex-end;
-    min-height: 120px;
-}
-
-#testimonials #testimonialHeader #decorQuote{
-    position: absolute;
-    height: 120px;
-}
-
-#testimonials #testimonialHeader h1{
-    margin: 0;
-}
 
 /*=========================================================================================
 =            Style of The Restaurant Cards (Used in Multiple Places in the page)            =
@@ -207,6 +208,10 @@ export default {
 =            Style of The Featured Restaurants Section            =
 =================================================================*/
 
+    #featuredRestaurants{
+        padding: 0 4%;
+    }
+
     #featuredRestaurants #headerContainer{
         display: flex;
         flex-direction: column;
@@ -242,7 +247,86 @@ export default {
         margin-top: 50px;
         background-color: var(--lightPurpleColor);
         height: 100vh;
+        padding: 0 4%;
     }
+
+    #testimonials #testimonialHeader{
+        display: flex;
+        align-items: flex-end;
+        min-height: 120px;
+        position: relative;
+        padding-top: 20px;
+    }
+
+    #testimonials #testimonialHeader #decorQuote{
+        position: absolute;
+        height: 50%;
+        top: 0;
+        right: 50%;
+    }
+
+    #testimonials #testimonialHeader h1{
+        margin: 0;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 375px) {
+        #testimonials #testimonialHeader{
+            padding-top: 0;
+        }
+        #testimonials #testimonialHeader #decorQuote{
+            position: absolute;
+            height: 75%;
+            top: 0;
+            left: 0;
+        }
+        #testimonials #testimonialHeader h1{
+            text-align: left;
+        }
+    }
+
+/*====================================================
+=            Style Of The Testimonial Card            =
+======================================================*/
+
+    #testimonialCardContainer .experienceCard{
+        display: flex;
+        padding: 5% 2.5%;
+        gap: 10px;
+    }
+
+    .experienceCard .quoteColumn{
+        display: flex;
+        width: 10%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .experienceCard .quoteColumn .quote{
+        width: 25px;
+        height: fit-content;
+        fill: var(--purpleColor);
+    }
+
+    .experienceCard .experienceColumn{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 25px;
+    }
+
+    .experienceCard .experienceColumn p{
+        margin: 0;
+        font-size: medium;
+    }
+
+    .experienceCard .experienceColumn .contributor{
+        font-weight: bold;
+    }
+/*=====  End of Style Of The Testimonial Card  ======*/
+
+
 
 /*=====  End of Style of the Testimonials section  ======*/
 

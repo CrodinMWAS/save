@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    props: ['data', 'image', 'name', 'description', 'rating'],
+    props: ['image', 'name', 'description', 'rating'],
     methods: {
         getStarStyle(index) {
             return index <= this.rating ? "" : "contrast(0)";
