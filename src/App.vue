@@ -1,10 +1,12 @@
 <template>
   <Navbar @toggleOverlay="this.hidePage = !this.hidePage"></Navbar>
   <router-view v-if="!this.hidePage"></router-view>
+  <Footer></Footer>
 </template>
 
 <script>
 import Navbar from '../src/components/Navbar.vue';
+import Footer from '../src/components/Footer.vue';
 
 export default{
   data() {
@@ -13,7 +15,8 @@ export default{
     }
   },
   components:{
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
@@ -124,4 +127,41 @@ nav .navButtonsContainer #backButton:hover{
   }
 }
 /*=====  End of Style of the Navbar  ======*/
+
+
+/*=============================================
+=            Style Of the Footer            =
+=============================================*/
+
+#footer{
+  background-color: black;
+  color: var(--greyishWhiteColor);
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#footer #infoColumn h3, #footer #infoColumn h5{
+  font-weight: normal;
+}
+
+#footer #infoColumn h5{
+  color: grey;
+}
+
+#footer #socialsColumn{
+  width: 100%;
+}
+
+#footer #socialsColumn #socialIconsContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*=====  End of Style Of the Footer  ======*/
+
+
 </style>
