@@ -28,12 +28,14 @@
         <Employee v-for="(employee, index) in employees" :key="index" :image="employee.image" :name="employee.name" :title="employee.title" ></Employee>
     </div>
 
-    <div id="connectionContainer">
-        <h1>Connect with DineEase</h1>
-        <p>Hungry for more? Whether you have questions, feedback, or simply wish to share your culinary story, we're eager to hear from you. Dive deeper into the DineEase experience and let's make every meal memorable.</p>
-        <router-link to="/Contact">
-            <div id="connectionButton" @click="scrollToTop()"><h1>Connect With DineEase</h1></div>
-        </router-link>
+    <div id="connectionSection">
+        <div id="connectionContainer">
+            <h1>Connect with DineEase</h1>
+            <p>Hungry for more? Whether you have questions, feedback, or simply wish to share your culinary story, we're eager to hear from you. Dive deeper into the DineEase experience and let's make every meal memorable.</p>
+            <router-link to="/Contact">
+                <div id="connectionButton" @click="scrollToTop()"><h1>Connect With DineEase</h1></div>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -90,11 +92,13 @@ export default {
 
     #timeline{
         width: 100%;
+        max-width: 1200px;
         height: 400px;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin: 0 auto;
     }
     #timeline::after{
         content: "";
@@ -198,7 +202,7 @@ export default {
     }
 
     .employeePicture{
-        width: 75%;
+        width: 200px;
         aspect-ratio: 1;
         background-position: center;
         background-repeat: no-repeat;
@@ -217,52 +221,106 @@ export default {
 =            Style of the connection section            =
 =============================================*/
 
-    #connectionContainer{
+    #connectionSection{
         width: 100%;
-        height: 40vh;
         background-color: var(--purpleColor);
         color: white;
-        padding: 20px 4%;
+        padding: 10% 4%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #connectionContainer{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;
+        height: 100%;
+        width: 100%;
+        max-width: 690px;
         gap: 0.67em;
     }
 
-    #connectionContainer > h1{
+    #connectionSection h1{
         margin: 0;
     }
 
-    #connectionContainer a{
-        width: 65%;
-    }
-
-    #connectionContainer #connectionButton{
+    #connectionSection #connectionButton{
         background-color: var(--greyishWhiteColor);
         border-radius: 5px;
-        padding: 2% 10%;
+        padding: 15px 50px;
         color: var(--purpleColor);
         transition: all 0.2s ease-in-out;
     }
-    #connectionContainer #connectionButton:hover{
+    #connectionSection #connectionButton:hover{
         cursor: pointer;
         color: var(--greyishWhiteColor);
         outline: 2px solid var(--greyishWhiteColor);
         background-color: var(--purpleColor);
         scale: 1.2;
     }
-    #connectionContainer #connectionButton:active{
+    #connectionSection #connectionButton:active{
         outline: 2px solid var(--purpleColor);
         scale: 1.1;
     }
     
-    #connectionContainer #connectionButton h1{
+    #connectionSection #connectionButton h1{
         font-size: medium;
     }
 
+
 /*=====  End of Style of the connection section  ======*/
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+
+    @media screen and (min-width: 500px){
+        #employeeContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .employeeCard{
+            display: flex;
+            width: 50%;
+        }
+
+        .cell h3{
+            font-size: medium;
+        }
+
+    }
+    
+    @media screen and (min-width: 610px) {
+        #connectionSection #connectionContainer > h1, .headerContainer h1{
+            font-size: 300%;
+        }
+    }
+
+    @media screen and (min-width: 992px){
+        #employeeContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .employeeCard{
+            display: flex;
+            width: calc(100% / 3);
+        }
+
+        .cell h3{
+            font-size: larger;
+        }
+
+    }
+
+/*=====  End of Media Queries  ======*/
+
 
 
 
