@@ -57,9 +57,9 @@
                     <svg id="filterIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74805 5.31713H3.5207M14.2527 5.31713H9.84492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.74805 10.6492L6.29953 10.6492M14.2527 10.6492L12.5758 10.6492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="6.7317" cy="5.35083" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/><ellipse cx="9.36549" cy="10.6492" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/></svg>
                 </label>
                 </div>
-                    <div class="searchButton">
-                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
-                    </div>
+                <div class="searchButton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
+                </div>
             </div>
 
             <div class="searchArea advancedSearch">
@@ -87,13 +87,13 @@
 
         </div>
         <div class="cardContainer">
-            <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
-            <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" :style="{ marginBottom: showMore ? '0' : '35px' }" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
+                <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
             <div id="allRestaurantsContainer" v-show="this.showMore">
                 <RestaurantCard v-for="(data, index) in moreApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
-                <div class="toggleRestaurantsButton" @click="this.showMore = false" ><h5>Show Less</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
+                <!-- <div class="toggleRestaurantsButton" @click="this.showMore = false" ><h5>Show Less</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div> -->
             </div>
         </div>
+        <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
     </div>
     
 </template>
@@ -417,6 +417,8 @@ export default {
     #allRestaurants{
         padding-top: 50px;
         padding: 50px 4% 4% 4%;
+        display: flex;
+        flex-direction: column;
     }
 
     #allRestaurants .headerContainer > h2{
@@ -581,6 +583,7 @@ export default {
         gap: 10px;
         color: var(--purpleColor);
         user-select: none;
+        align-self: center;
     }
     .toggleRestaurantsButton:hover{
         cursor: pointer;
@@ -605,10 +608,6 @@ export default {
         flex-direction: column;
         gap: 25px;
         width: 100%;
-    }
-
-    #allRestaurantsContainer .toggleRestaurantsButton{
-        align-self: center;
     }
     
     .rotatedIcon{
@@ -719,12 +718,10 @@ export default {
             width: 50%;
             margin: 0;
             height: 400px;
-            overflow: hidden;
         }
 
         #fadedCircle{
             position: absolute;
-            display: flex;
             background-color: var(--pinkColor);
             border-radius: 50%;
             width: 60vw;
@@ -760,7 +757,7 @@ export default {
             display: flex;
             flex-direction: column;
             width: calc(95% / 3);
-            height: 70%;
+            height: 500px;
             background-color: white;
         }
 
@@ -803,7 +800,60 @@ export default {
             left: -280px;
         }
 
+        /*----------  Testimonials Section ----------*/
         
+        /* #testimonials{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #testimonialHeader{
+            align-self: flex-start;
+        } */
+        
+
+        
+        /*----------  Style of the Allrestaurants section  ----------*/
+        
+        #allRestaurants{
+            height: fit-content;
+            padding: 0 2%;
+            justify-content: space-evenly;
+        }
+
+        #allRestaurants .cardContainer .headerContainer{
+            height: 35%;
+        }
+
+        #allRestaurants .cardContainer{
+            height: 60%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #allRestaurants .cardContainer .toggleRestaurantsButton{
+            height: 15%;
+            margin: 0;
+        }
+
+        #allRestaurants .cardContainer .card{
+            width: calc(90% / 3);
+        }
+        
+        #allRestaurants .simpleSearch{
+            width: 50%;
+            align-self: center;
+        }
+        
+        #allRestaurants #allRestaurantsContainer{
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0;
+            width: 100%;
+            gap: 35px;
+            justify-content: center;
+        }
+
     }
         
 /*=====  End of Media Queries  ======*/
