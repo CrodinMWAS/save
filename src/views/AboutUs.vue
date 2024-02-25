@@ -31,7 +31,9 @@
     <div id="connectionContainer">
         <h1>Connect with DineEase</h1>
         <p>Hungry for more? Whether you have questions, feedback, or simply wish to share your culinary story, we're eager to hear from you. Dive deeper into the DineEase experience and let's make every meal memorable.</p>
-        <div id="connectionButton"><h1>Connect With DineEase</h1></div>
+        <router-link to="/Contact">
+            <div id="connectionButton"><h1>Connect With DineEase</h1></div>
+        </router-link>
     </div>
 </template>
 
@@ -228,6 +230,11 @@ export default {
         margin: 0;
     }
 
+    #connectionContainer a{
+        width: 45%;
+        scale: 1.2;
+    }
+
     #connectionContainer #connectionButton{
         background-color: var(--greyishWhiteColor);
         border-radius: 5px;
@@ -240,6 +247,11 @@ export default {
         color: var(--greyishWhiteColor);
         outline: 2px solid var(--greyishWhiteColor);
         background-color: var(--purpleColor);
+        scale: 1.2;
+    }
+    #connectionContainer #connectionButton:active{
+        outline: 2px solid var(--purpleColor);
+        scale: 1.1;
     }
     
     #connectionContainer #connectionButton h1{

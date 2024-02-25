@@ -146,7 +146,7 @@ export default{
     color: var(--lightPurpleColor);
   }
 
-  @media screen and (min-width: 600px){
+  @media screen and (min-width: 700px){
     nav{
       gap: 3%;
     }

@@ -179,7 +179,7 @@ export default {
     #formContainer button{
         border: 0;
         border-radius: 5px;
-        padding: 5% 10%;
+        padding: 20px 50px;
         margin: 20% 0;
         background-color: var(--purpleColor);
         color: white;
