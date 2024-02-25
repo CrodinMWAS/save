@@ -18,8 +18,6 @@
         <hr>
     </div>
 
-
-
     <div id="featuredRestaurants">
         <div class="headerContainer">
             <h1>Featured Restaurants</h1>
@@ -46,16 +44,44 @@
         <div class="headerContainer">
             <h1>Find Your Perfect Dining Spot</h1>
             <h2>Search by Cuisine, Location, or Name</h2>
-            <div id="searchArea">
+            <input type="checkbox" id="hiddenCheckbox">
+
+            <div class="searchArea simpleSearch">
                 <div id="searchBar">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" fill="black"/></svg>
                     <input type="text" placeholder="Search for restaurants">
+                <label for="hiddenCheckbox">
                     <svg id="filterIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74805 5.31713H3.5207M14.2527 5.31713H9.84492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.74805 10.6492L6.29953 10.6492M14.2527 10.6492L12.5758 10.6492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="6.7317" cy="5.35083" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/><ellipse cx="9.36549" cy="10.6492" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/></svg>
+                </label>
                 </div>
-                <div id="searchButton">
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
-                </div>
+                    <div class="searchButton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
+                    </div>
             </div>
+
+            <div class="searchArea advancedSearch">
+                <div id="inputs">
+                    <div id="cusineSelectContainer">
+                        <select name="Cusine" id="cusineSelect">
+                            <option>Cusine</option>
+                        </select>
+                    </div>
+                    <div id="locationInputContainer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.657 16.657L13.414 20.9C13.039 21.2746 12.5306 21.4851 12.0005 21.4851C11.4704 21.4851 10.962 21.2746 10.587 20.9L6.343 16.657C5.22422 15.5382 4.46234 14.1127 4.15369 12.5609C3.84504 11.009 4.00349 9.40051 4.60901 7.93873C5.21452 6.47694 6.2399 5.22754 7.55548 4.3485C8.87107 3.46947 10.4178 3.00029 12 3.00029C13.5822 3.00029 15.1289 3.46947 16.4445 4.3485C17.7601 5.22754 18.7855 6.47694 19.391 7.93873C19.9965 9.40051 20.155 11.009 19.8463 12.5609C19.5377 14.1127 18.7758 15.5382 17.657 16.657V16.657Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <input type="text" placeholder="Location">
+                    </div>
+                    <div id="nameInputContainer">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="searchButton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
+                    </div>
+                </div>
+                <label for="hiddenCheckbox">
+                    <h2>Simple Search</h2>
+                </label>
+            </div>
+
         </div>
         <div class="cardContainer">
             <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
@@ -127,6 +153,7 @@ export default {
 </script>
 
 <style>
+
 /*=========================================================================================
 =            Style of The Restaurant Cards (Used in Multiple Places in the page)            =
 ===========================================================================================*/
@@ -398,19 +425,106 @@ export default {
         padding: 50px 4% 4% 4%;
     }
 
-    #allRestaurants .headerContainer h2{
+    #allRestaurants .headerContainer > h2{
         margin-bottom: 25px;
     }
+
 /*----------  Style of the SearchArea  ----------*/
 
-    #searchArea{
+
+/*===========================================================================
+=            Style for changing the search type (advanced/simple)            =
+=============================================================================*/
+
+    #hiddenCheckbox{
+        display: none;
+    }
+
+    #hiddenCheckbox:checked ~ .simpleSearch{
+        display: none;
+    }
+
+    #hiddenCheckbox:checked ~ .advancedSearch{
+        display: flex;
+    }
+
+    .simpleSearch{
+        display: flex;
+    }
+    
+    .advancedSearch{
+        display: none;
+        flex-direction: column;
+    }
+
+    .advancedSearch #inputs{
+        display: flex;
+        flex-direction: column; /*Remove for pc */
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .advancedSearch label h2{
+        margin: 0;
+        color: var(--purpleColor);
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        user-select: none;
+    }
+    .advancedSearch label h2:hover{
+        cursor: pointer;
+        scale: 1.2;
+    }
+    .advancedSearch label h2:active{
+        color: var(--blackColor);
+    }
+    
+    .advancedSearch #inputs input, .advancedSearch #inputs select {
+        border: none;
+        background-color: var(--greyishWhiteColor);
+        border-radius: 5px;
+        width: 90%;
+        padding: 5px;
+        font-size: medium;
+    }
+    .advancedSearch #inputs input:focus, .advancedSearch #inputs select:focus {
+        outline: none;
+    }
+    .advancedSearch #inputs select{
+        color: gray;
+    }
+    
+    .advancedSearch #inputs #locationInputContainer, #cusineSelectContainer, #nameInputContainer{
         display: flex;
         justify-content: center;
+        align-items: center;
+        background-color: var(--greyishWhiteColor);
+        border-radius: 5px;
+        min-height: 50px;
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .advancedSearch #inputs #locationInputContainer svg{
+        margin: 0 0 0 5px;
+    }
+
+    .advancedSearch .searchButton{
+        width: 90%; /*Remove for pc */
+    }
+    
+     
+/*=====  End of Style for changing the search type (advanced/simple)  ======*/
+
+    .searchArea{
+        justify-content: center;
+        align-items: center;
         margin-bottom: 25px;
         gap: 15px;
     }
 
-    #searchArea #searchBar{
+    .searchArea #searchBar{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -419,22 +533,26 @@ export default {
         height: 50px;
         padding: 0 2.5%;
     }
+    
+    .searchArea #searchBar label{
+        padding-top: 3px;
+    }
 
-    #searchArea #searchBar input{
+    .searchArea #searchBar input{
         border: none;
         background-color: var(--greyishWhiteColor);
         width: 90%;
     }
-    #searchArea #searchBar input:focus{
+    .searchArea #searchBar input:focus{
         outline: none;
     }
 
-    #searchArea #searchBar #filterIcon:hover{
+    .searchArea #searchBar #filterIcon:hover{
         scale: 1.2;
         cursor: pointer;
     }
 
-    #searchArea #searchButton{
+    .searchArea .searchButton{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -446,15 +564,15 @@ export default {
         user-select: none;
         transition: all 0.3s ease-in-out;
     }
-    #searchArea #searchButton:hover{
+    .searchArea .searchButton:hover{
         cursor: pointer;
         scale: 1.2;
     }
-    #searchArea #searchButton:active{
+    .searchArea .searchButton:active{
         scale: 1.1;
     }
 
-    #searchArea #searchButton svg{
+    .searchArea .searchButton svg{
         fill: var(--purpleColor);
     }
 
