@@ -92,7 +92,7 @@ export default {
 
     #timeline{
         width: 100%;
-        max-width: 1200px;
+        max-width: 1300px;
         height: 400px;
         position: relative;
         display: flex;
@@ -225,7 +225,7 @@ export default {
         width: 100%;
         background-color: var(--purpleColor);
         color: white;
-        padding: 10% 4%;
+        padding: 5%;
         text-align: center;
         display: flex;
         justify-content: center;
