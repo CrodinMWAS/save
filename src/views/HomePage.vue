@@ -13,18 +13,21 @@
         <div id="purpleStrip"></div>
         <div id="lightPurpleStrip"></div>
         <div id="heroImageContainer">
-            <img src="../assets/images/Hero Illustration.png" alt="This is a cool illustration of a man eating a meal and rating it 5 stars." title="This is a cool illustration of a man eating a meal and rating it 5 stars.">
+            <img src="../assets/images/HeroIllustration.png" alt="This is a cool illustration of a man eating a meal and rating it 5 stars." title="This is a cool illustration of a man eating a meal and rating it 5 stars.">
         </div>
+        <div id="imageLightPurpleStrip"></div>
+        <div id="imageSemiLightPurpleStrip"></div>
+        <div id="imagePurpleStrip"></div>
         <hr>
     </div>
 
     <div id="featuredRestaurants">
+        <div class="featuredCircle"></div>
+        <div class="featuredCircle"></div>
         <div class="headerContainer">
             <h1>Featured Restaurants</h1>
             <h2>Discover Unforgettable Dining Destinations</h2>
         </div>
-        <div id="bigCircle1"></div>
-        <div id="bigCircle2"></div>
         <div class="cardContainer">
             <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
         </div>
@@ -318,6 +321,7 @@ export default {
 
     #featuredRestaurants{
         padding: 0 4%;
+        position: relative;
     }
 
 /*=====  End of Style of The Featured Restaurants Section  ======*/
@@ -693,6 +697,113 @@ export default {
         #testimonialCardContainer .experienceCard{
             padding: 2.5%;
         }
+    }
+
+    @media screen and (min-width: 992px){
+        
+        /*----------  Hero Section  ----------*/
+        
+        #hero{
+            display: flex;
+            flex-direction: row;
+            padding: 4% 2%;
+        }
+        #hero hr{
+            display: none;
+        }
+        #heroTextContainer{
+            width: 45%;
+        }
+
+        #hero #heroImageContainer{
+            width: 50%;
+            margin: 0;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        #fadedCircle{
+            position: absolute;
+            display: flex;
+            background-color: var(--pinkColor);
+            border-radius: 50%;
+            width: 60vw;
+            height: 60vh;
+            filter: blur(30px);
+            top: -25vh;
+            right: -25vw;
+            z-index: -5;
+        }
+        
+        /*----------  Featured Restaurants Section  ----------*/
+
+        #featuredRestaurants{
+            height: 75vh;
+            padding: 0 2%;
+        }
+
+        #featuredRestaurants .headerContainer{
+            text-align: left;
+            height: 15%;
+        }
+
+        #featuredRestaurants .headerContainer h2{
+            margin: 0;
+        }
+
+        .cardContainer{
+            flex-direction: row;
+            height: 85%;
+        }
+
+        .cardContainer .card{
+            display: flex;
+            flex-direction: column;
+            width: calc(95% / 3);
+            height: 70%;
+            background-color: white;
+        }
+
+        .cardContainer .card .restaurantName{
+            font-size: large;
+        }
+
+        .cardContainer .card .cardPicture{
+            height: 100%;
+            aspect-ratio: 1;
+            margin-bottom: 10%;
+        }
+
+        .cardContainer .card .cardInfoContainer{
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .featuredCircle{
+            background-color: var(--lightPurpleColor);
+            border-radius: 50%;
+            height: 50%;
+            aspect-ratio: 1;
+        }
+        
+        .featuredCircle:first-of-type{
+            position: absolute;
+            right: -10%;
+            z-index: -1;
+            top: 5%;
+        }
+        
+        .featuredCircle:nth-of-type(2){
+            position: absolute;
+            z-index: -1;
+            height: 75%;
+            aspect-ratio: 1;
+            background-color: var(--lightPurpleColor);
+            bottom: -180px;
+            left: -280px;
+        }
+
+        
     }
         
 /*=====  End of Media Queries  ======*/

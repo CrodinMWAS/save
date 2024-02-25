@@ -33,6 +33,7 @@ export default{
     --greyishWhiteColor: #EAEAEA;
     --purpleColor: #7c3aed;
     --lightPurpleColor: #ede9fe;
+    --pinkColor: #ded6fb;
   }
 
   body{
