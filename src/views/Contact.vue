@@ -159,14 +159,9 @@ export default {
         border-radius: 5px;
         padding: 2%;
     }
-    #formContainer input:nth-child(odd){
-        margin: 2.5% 2.5% 2.5% 0;
-    }
-    #formContainer input:nth-child(even){
-        margin: 2.5% 0 2.5% 2.5%;
-    }
     #formContainer input{
-        width: 45%;
+        width: 95%;
+        margin: 10px 0;
     }
     #formContainer textarea{
         margin-top: 2.5%;
@@ -196,6 +191,19 @@ export default {
         scale: 1.1;
         outline: 2px solid var(--lightPurpleColor);
     }
+
+    @media screen and (min-width: 500px) {
+        #formContainer input:nth-child(odd){
+            margin: 2.5% 2.5% 2.5% 0;
+        }
+        #formContainer input:nth-child(even){
+            margin: 2.5% 0 2.5% 2.5%;
+        }
+        #formContainer input{
+            width: 45%;
+        }
+    }
+
     /*----------  End of the Style of the form elements  ----------*/
     
 /*=====  End of Style of the feedback/information container  ======*/

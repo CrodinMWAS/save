@@ -32,7 +32,7 @@
         <h1>Connect with DineEase</h1>
         <p>Hungry for more? Whether you have questions, feedback, or simply wish to share your culinary story, we're eager to hear from you. Dive deeper into the DineEase experience and let's make every meal memorable.</p>
         <router-link to="/Contact">
-            <div id="connectionButton"><h1>Connect With DineEase</h1></div>
+            <div id="connectionButton" @click="scrollToTop()"><h1>Connect With DineEase</h1></div>
         </router-link>
     </div>
 </template>
@@ -73,6 +73,11 @@ export default {
                         title: "Marketing & Brand Manager"
                     },
                 ],
+        }
+    },
+    methods: {
+        scrollToTop(){
+            window.scrollTo(0, 0);
         }
     },
 }
@@ -231,8 +236,7 @@ export default {
     }
 
     #connectionContainer a{
-        width: 45%;
-        scale: 1.2;
+        width: 65%;
     }
 
     #connectionContainer #connectionButton{

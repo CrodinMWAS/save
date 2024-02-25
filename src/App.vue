@@ -56,6 +56,10 @@ export default{
     justify-content: space-around;
   }
 
+  .socialIconsContainer img{
+    margin: 0 10px 0 0; 
+  }
+
 /*============================================================================
 =            Style Of Headers (Used in Multiple Places in the Project)            =
 ==============================================================================*/
@@ -95,6 +99,7 @@ export default{
     padding: 35px 4%;
     height: 45px;
     margin-bottom: 35px;
+    user-select: none;
   }
 
   nav img:hover{
@@ -145,32 +150,6 @@ export default{
     scale: 1.1;
     color: var(--lightPurpleColor);
   }
-
-  @media screen and (min-width: 700px){
-    nav{
-      gap: 3%;
-    }
-
-    #hamburgerMenuIcon{
-      display: none;
-    }
-
-    nav .navButtonsContainer{
-      display: flex;
-      flex-direction: row;
-      padding-top: 0.3%;
-      min-height: 36px;
-      height: 100%;
-      gap: 2%;
-    }
-
-    nav .navButtonsContainer h2{
-      font-size: medium;
-    }
-    nav .navButtonsContainer #backButton{
-      display: none;
-    }
-  }
 /*=====  End of Style of the Navbar  ======*/
 
 
@@ -212,6 +191,73 @@ export default{
   }
 
 /*=====  End of Style Of the Footer  ======*/
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+
+  @media screen and (min-width: 450px) {
+    #footer{
+      padding: 5%;
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    #footer #infoColumn{
+      width: 45%;
+    }
+
+    #footer #socialsColumn{
+      width: 30%;
+    }
+
+    .socialIconsContainer{
+      justify-content: flex-start;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    #footer #infoColumn{
+      width: 95%;
+    }
+    #footer #infoColumn #contactContainer{
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    nav{
+      gap: 3%;
+    }
+
+    #hamburgerMenuIcon{
+      display: none;
+    }
+
+    nav .navButtonsContainer{
+      display: flex;
+      flex-direction: row;
+      padding-top: 0.3%;
+      min-height: 36px;
+      height: 100%;
+      gap: 2%;
+    }
+
+    nav .navButtonsContainer h2{
+      font-size: medium;
+    }
+    nav .navButtonsContainer #backButton{
+      display: none;
+    }
+  }
+
+/*=====  End of Media Queries  ======*/
+
+
 
 
 </style>

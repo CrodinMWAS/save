@@ -167,18 +167,19 @@ export default {
 
     .card{
         width: 100%;
-        padding: 10px;
+        padding: 15px;
         border-radius: 15px;
         box-shadow: 0px 3px 7.5px rgba(128, 128, 128, 0.3);
     }
     
     .cardPicture{
         width: 100%;
-        aspect-ratio: 2;
+        aspect-ratio: 3;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 5px;
+        image-rendering: optimizeQuality;
     }
 
     .cardInfoContainer{
@@ -235,16 +236,15 @@ export default {
 =============================================*/
 
     #hero{
-        height: calc(100vh - 105px);
+        height: fit-content;
         width: 100%;
-        padding: 0 4%;
-        overflow: hidden;
+        padding: 4% 4%;
     }
 
     #hero #heroTextContainer{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     #hero #heroTextContainer h1{
@@ -256,7 +256,6 @@ export default {
 
     #hero #heroTextContainer #exploreButton{
         display: flex;
-        align-self: flex-start;
         align-items: center;
         border-radius: 10px;
         background-color: var(--purpleColor);
@@ -267,19 +266,20 @@ export default {
     }
     #hero #heroTextContainer #exploreButton svg{
         fill: white;
+        transition: all 0.2s ease-in-out;
     }
     #hero #heroTextContainer #exploreButton:hover svg{
         fill: black;
     }
     #hero #heroTextContainer #exploreButton:hover {
         cursor: pointer;
-        scale: 1.2;
+        scale: 1.1;
         background-color: var(--greyishWhiteColor);
         color: var(--blackColor);
         outline: 2px solid var(--purpleColor);
     }
     #hero #heroTextContainer #exploreButton:active{
-        scale: 1.1;
+        scale: 1.0;
         outline: 2px solid var(--lightPurpleColor);
     }
 
@@ -293,6 +293,7 @@ export default {
 
     #hero #heroImageContainer{
         display: flex;
+        margin: 0 auto;
         align-items: center;
         justify-content: center;
         height: fit-content;
@@ -300,8 +301,12 @@ export default {
     }
 
     #hero #heroImageContainer img{
-        width: 130%;
-        aspect-ratio: 1;
+        width: 100%;
+    }
+
+    #hero hr{
+        border-color: var(--greyishWhiteColor);
+        margin: 0 8%;
     }
 
 /*=====  End of Style Of the Hero Section  ======*/
@@ -345,21 +350,6 @@ export default {
     #testimonials #testimonialHeader h1{
         margin: 0;
         text-align: center;
-    }
-
-    @media screen and (min-width: 375px) {
-        #testimonials #testimonialHeader{
-            padding-top: 0;
-        }
-        #testimonials #testimonialHeader #decorQuote{
-            position: absolute;
-            height: 75%;
-            top: 0;
-            left: 0;
-        }
-        #testimonials #testimonialHeader h1{
-            text-align: left;
-        }
     }
 
 /*====================================================
@@ -491,6 +481,7 @@ export default {
     .advancedSearch #inputs input:focus, .advancedSearch #inputs select:focus {
         outline: none;
     }
+
     .advancedSearch #inputs select{
         color: gray;
     }
@@ -514,7 +505,6 @@ export default {
         width: 90%; /*Remove for pc */
     }
     
-     
 /*=====  End of Style for changing the search type (advanced/simple)  ======*/
 
     .searchArea{
@@ -532,6 +522,7 @@ export default {
         background-color: var(--greyishWhiteColor);
         height: 50px;
         padding: 0 2.5%;
+        width: 80%;
     }
     
     .searchArea #searchBar label{
@@ -542,6 +533,8 @@ export default {
         border: none;
         background-color: var(--greyishWhiteColor);
         width: 90%;
+        height: 100%;
+        font-size: large;
     }
     .searchArea #searchBar input:focus{
         outline: none;
@@ -607,6 +600,7 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 25px;
+        width: 100%;
     }
 
     #allRestaurantsContainer .toggleRestaurantsButton{
@@ -618,6 +612,91 @@ export default {
     }
 
 /*=====  End of Style of the Restaurant Search Area  ======*/
+
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+
+    @media screen and (min-width: 375px){
+        #testimonials #testimonialHeader{
+            padding-top: 0;
+        }
+        #testimonials #testimonialHeader #decorQuote{
+            position: absolute;
+            height: 75%;
+            top: 0;
+            left: 0;
+        }
+        #testimonials #testimonialHeader h1{
+            text-align: left;
+        }
+        .advancedSearch #inputs{
+            width: 85%;
+        }
+    }
+
+    @media screen and (min-width: 450px){
+        .toggleRestaurantsButton{
+            font-size: larger;
+        }
+        .advancedSearch #inputs{
+            width: 100%;
+        }
+    }
+
+
+    @media screen and (min-width: 500px){
+        .restaurantName{
+            width: 50%;
+            font-size: x-large;
+        }
+
+        .restaurantRatings img{
+            height: 16px;
+        }
+        
+        .restaurantDescription{
+            font-size: medium;
+        }
+    }
+
+    @media screen and (min-width: 550px){
+        #testimonials{
+            padding: 10% 4% 10% 4%;
+        }
+    }
+
+    @media screen and (min-width: 650px){
+        .advancedSearch #inputs{
+            flex-direction: row;
+        }
+        .advancedSearch .searchButton{
+            width: initial;
+        }
+    }
+
+    @media screen and (min-width: 765px){
+        #testimonials{
+            padding: 4%;
+        }
+        #testimonials #testimonialHeader #decorQuote{
+            position: absolute;
+            height: 75%;
+            top: 30px;
+            left: 0;
+        }
+    }
+
+    @media screen and (min-width: 900px){
+        #testimonialCardContainer .experienceCard{
+            padding: 2.5%;
+        }
+    }
+        
+/*=====  End of Media Queries  ======*/
+
 
 
 </style>
