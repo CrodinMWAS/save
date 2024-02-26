@@ -106,12 +106,17 @@ export default{
     user-select: none;
   }
 
-  nav img:hover{
+  nav > button{
+    background-color: transparent;
+    border: none;
+  }
+
+  nav > button:hover{
     cursor: pointer;
   }
 
   nav .navButtonsContainer{
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
@@ -121,37 +126,49 @@ export default{
   }
   .showButtons{
     height: 100vh;
+    margin: 0;
+  }
+
+  nav .showButtons #backButton{
+    width: 40px;
+    height: 40px;
+  }
+
+  nav .showButtons a{
+    width: 50%;
+    height: 25%;
+    font-size: xx-large;
+    text-align: center;
   }
   nav .navButtonsContainer .showButtons .navButtonsContainer{
     display: flex;
   }
 
-  nav .navButtonsContainer h2{
+  nav .navButtonsContainer button, nav .navButtonsContainer a{
     margin: 0;
     padding: 0;
-    width: fit-content;
     transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
   }
-  nav .navButtonsContainer h2:hover{
+  nav .navButtonsContainer button:hover, nav .navButtonsContainer a:hover{
     cursor: pointer;
     scale: 1.2;
   }
-  nav .navButtonsContainer h2:active{
+  nav .navButtonsContainer button:active,nav .navButtonsContainer a:active{
     scale: 1.1;
     color: var(--lightPurpleColor);
   }
+
+  nav .navButtonsContainer button a{
+    display: block;
+  }
+
   
   nav .navButtonsContainer #backButton{
     transform: rotate(-90deg);
     align-self: flex-end;
-  }
-  nav .navButtonsContainer #backButton:hover{
-    cursor: pointer;
-    scale: 1.2;
-  }
-  nav .navButtonsContainer #backButton:active{
-    scale: 1.1;
-    color: var(--lightPurpleColor);
   }
 /*=====  End of Style of the Navbar  ======*/
 
@@ -182,8 +199,12 @@ export default{
     color: var(--blackColor)
   }
 
-  #footer #infoColumn h3, #footer #infoColumn h5{
+  #footer #infoColumn h3{
     font-weight: normal;
+  }
+
+  #footer #infoColumn > h3:last-of-type{
+    font-size: 80%
   }
 
   #footer #socialsColumn{
@@ -253,7 +274,7 @@ export default{
       gap: 2%;
     }
 
-    nav .navButtonsContainer h2{
+    nav .navButtonsContainer a{
       font-size: medium;
     }
     nav .navButtonsContainer #backButton{

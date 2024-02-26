@@ -7,7 +7,7 @@
                 From international dishes to traditional delights and gastronomic adventures, find your perfect spot with DineEase.</p>
             <div id="exploreButton" @click="this.$refs.restaurants.scrollIntoView({behavior: 'smooth'})">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z"/></svg>
-                <h3>Explore Restaurants</h3>
+                <h2>Explore Restaurants</h2>
             </div>
         </div>
         <div id="middleStrip">
@@ -104,7 +104,7 @@
                 <RestaurantCard v-for="(data, index) in moreApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
             </div>
         </div>
-        <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
+        <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" ><h2>Show {{ this.showMore ? "Less" : "More" }}</h2><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
     </div>
     
 </template>
@@ -145,7 +145,6 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.featuredApiData = data;
-                console.log(this.featuredApiData)
             })
             .catch(err => console.log(err));
         },
@@ -155,7 +154,6 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.moreApiData = data.filter(item => !this.featuredApiData.some(item2 => item.name == item2.name))
-                console.log(this.moreApiData)
             })
             .catch(err => console.log(err))
         },
@@ -227,7 +225,7 @@ export default {
     .restaurantDescription{
         margin: 0;
         font-size: small;
-        color: grey;
+        color: rgba(0, 0, 0, 0.6);
     }
 
     .restaurantLink{
@@ -298,7 +296,7 @@ export default {
         outline: 2px solid var(--lightPurpleColor);
     }
 
-    #hero #heroTextContainer #exploreButton h3{
+    #hero #heroTextContainer #exploreButton h2{
         font-weight: 500;
         font-size: medium;
         margin-left: 10px;
@@ -511,7 +509,7 @@ export default {
     }
 
     .advancedSearch #inputs select{
-        color: gray;
+        color: grey;
     }
     
     .advancedSearch #inputs #locationInputContainer, #cusineSelectContainer, #nameInputContainer{
@@ -736,6 +734,7 @@ export default {
 
         #heroTextContainer{
             width: 60%;
+            padding-left: 5%;
         }
         
         #hero #heroImageContainer{
@@ -871,7 +870,7 @@ export default {
             flex-direction: column;
             width: calc(97% / 3);
             height: 500px;
-            background-color: white;
+            background-color: #F9F9F9;
         }
 
         .cardContainer .card .cardPicture{

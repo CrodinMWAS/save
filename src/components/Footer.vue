@@ -11,7 +11,7 @@
                 <h3>+36 30 123 4567</h3>
                 <h3>support@dineease.com</h3>
             </div>
-            <h5>© 2024 - All rights reserved</h5>
+            <h3>© 2024 - All rights reserved</h3>
         </div>
         <div id="socialsColumn">
             <h2>Follow Us</h2>

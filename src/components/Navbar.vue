@@ -1,15 +1,17 @@
 <template>
-     <nav :class="{showButtons: showNavButtons}">
-        <router-link to="/" v-if="!showNavButtons">
-            <img src="../assets/images/Logo.png" alt="This is a logo of our website. It takes you back to our homepage." title="This is a logo of our website.">
+     <nav :class="{showButtons: showNavButtons}" role="navigation" aria-label="Website Navigaton">
+        <router-link to="/" v-if="!showNavButtons" aria-label="Go to homepage">
+            <img src="../assets/images/Logo.png" alt="This is a logo of our website. It takes you back to our homepage." title="Go to homepage">
         </router-link>
-        <div class="navButtonsContainer">
-            <h2 id="backButton" @click="this.toggleNavOverlay()"><img src="../assets/images/Chevron Down Icon@2x.png" alt="This is an Icon which hides the navbar menu." title="This is an Icon Which hides the navbar menu."></h2>
-            <h2><router-link to="/" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Home</router-link></h2>
-            <h2><router-link to="/AboutUs" @click="this.showNavButtons ? this.toggleNavOverlay() : '' ">About Us</router-link></h2>
-            <h2><router-link to="/Contact" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Contact</router-link></h2>
+        <div class="navButtonsContainer" :class="{showButtons: showNavButtons}" aria-label="Toggle Navigation Menu">
+            <button aria-label="Leave Menu" id="backButton" @click="this.toggleNavOverlay()"><img src="../assets/images/Chevron Down Icon@2x.png" alt="Menu Icon" title="Leave Menu"></button>
+            <router-link aria-label="Go To The Homepage" to="/" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Home</router-link>
+            <router-link aria-label="Go To The About Us page" to="/AboutUs" @click="this.showNavButtons ? this.toggleNavOverlay() : '' ">About Us</router-link>
+            <router-link aria-label="Go To The Contact page" to="/Contact" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Contact</router-link>
         </div>
-        <img ref="hamburgerMenuIcon" id="hamburgerMenuIcon" v-if="!showNavButtons" @click="this.toggleNavOverlay()" src="../assets/images/Menu Icon.png" alt="This is an Icon for the dropdown menu." title="This is an Icon for the dropdown menu.">
+        <button v-if="!showNavButtons" @click="this.toggleNavOverlay()" aria-label="Open Menu" id="hamburgerMenuIcon">
+            <img ref="hamburgerMenuIcon" src="../assets/images/Menu Icon.png" alt="This Is a Hamburgermenu Icon" title="Open Menu">
+        </button>
     </nav>
 </template>
 
