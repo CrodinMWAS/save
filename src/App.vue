@@ -129,19 +129,18 @@ export default{
     margin: 0;
   }
 
-  nav .showButtons #backButton{
+  .showButtons #backButton{
     width: 40px;
     height: 40px;
   }
 
-  nav .showButtons a{
+  .showButtons a{
     width: 50%;
     height: 25%;
     font-size: xx-large;
-    text-align: center;
-  }
-  nav .navButtonsContainer .showButtons .navButtonsContainer{
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   nav .navButtonsContainer button, nav .navButtonsContainer a{
@@ -237,6 +236,11 @@ export default{
 
     .socialIconsContainer{
       justify-content: flex-start;
+    }
+
+    .socialIconsContainer button{
+      background-color: transparent;
+      border: none;
     }
   }
 

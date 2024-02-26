@@ -1,16 +1,17 @@
 <template>
-    <div id="hero">
-        <div id="fadedCircle"></div>
+    <div id="hero" role="banner" aria-label="Welcome Section / Main Banner">
+        <div id="fadedCircle" aria-hidden="true"></div>
         <div id="heroTextContainer">
             <h1>DineEase: Exceptional Dining Awaits.</h1>
             <p>Dive into culinary wonders with DineEase. We curate top-rated restaurants, each with distinct flavors and ambiance.
                 From international dishes to traditional delights and gastronomic adventures, find your perfect spot with DineEase.</p>
-            <div id="exploreButton" @click="this.$refs.restaurants.scrollIntoView({behavior: 'smooth'})">
+            <button id="exploreButton" @click="this.$refs.restaurants.scrollIntoView({behavior: 'smooth'})" role="button" tabindex="0" aria-label="Explore Restaurants">
+                <!-- Scrolls To The AllRestaurants Section -->
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z"/></svg>
-                <h2>Explore Restaurants</h2>
-            </div>
+                <h2 aria-hidden="true">Explore Restaurants</h2>
+            </button>
         </div>
-        <div id="middleStrip">
+        <div id="middleStrip" aria-hidden="true">
             <div id="topStrip">
                 <div class="lightStrip"></div>
             </div>
@@ -25,14 +26,14 @@
             </div>
         </div>
         <div id="heroImageContainer">
-            <img src="../assets/images/HeroIllustration.png" alt="This is a cool illustration of a man eating a meal and rating it 5 stars." title="This is a cool illustration of a man eating a meal and rating it 5 stars.">
+            <img aria-hidden="true" src="../assets/images/HeroIllustration.png" alt="Illustration of a man eating a meal and rating it 5 stars." title="Illustration: Man eating and rating a meal">
         </div>
-        <hr>
+        <hr aria-hidden="true">
     </div>
 
-    <div id="featuredRestaurants">
-        <div class="featuredCircle"></div>
-        <div class="featuredCircle"></div>
+    <div id="featuredRestaurants" role="region" aria-label="Featured Restaurants Section">
+        <div class="featuredCircle" aria-hidden="true"></div>
+        <div class="featuredCircle" aria-hidden="true"></div>
         <div class="headerContainer">
             <h1>Featured Restaurants</h1>
             <h2>Discover Unforgettable Dining Destinations</h2>
@@ -42,82 +43,102 @@
         </div>
     </div>
 
-    <div id="testimonials">
-        <div id="testimonialHeader">
+    <div id="feedbacks" role="region" aria-label="Feedbacks">
+        <div id="feedbackHeader">
             <div id="quote">
-                <img id="decorQuote" src="../assets/images/Quote markvector.svg" alt="This is a decorative quote.">
+                <img aria-hidden="true" id="decorQuote" src="../assets/images/Quote markvector.svg" alt="Decorative quote.">
                 <h1>Delightful Experiences Shared by Our Guests</h1>
             </div>
-            <TestimonialCard v-if="testimonials.length > 0" :experience="testimonials[0].experience" :contributor="testimonials[0].contributor"></TestimonialCard>
+            <FeedbackCard v-if="feedbacks.length > 0" :experience="feedbacks[0].experience" :contributor="feedbacks[0].contributor"></FeedbackCard>
         </div>
-        <div id="testimonialCardContainer">
-            <TestimonialCard v-for="(testimonial, index) in this.testimonials" :key="index" :experience="testimonial.experience" :contributor="testimonial.contributor"></TestimonialCard>
+        <div id="feedbackCardContainer">
+            <FeedbackCard v-for="(feedback, index) in this.feedbacks" :key="index" :experience="feedback.experience" :contributor="feedback.contributor"></FeedbackCard>
         </div>
     </div>
 
-    <div id="allRestaurants" ref="restaurants">
+    <div id="allRestaurants" ref="restaurants" role="region" aria-label="Browse Restaurants">
         <div class="headerContainer">
             <h1>Find Your Perfect Dining Spot</h1>
             <h2>Search by Cuisine, Location, or Name</h2>
-            <input type="checkbox" id="hiddenCheckbox">
+
+            <!-- Checkbox (hidden) for the advanced/simple search toggle -->
+            <input type="checkbox" id="hiddenCheckbox" aria-hidden="true">
+
+            <!-- Simple Searchbar:  -->
 
             <div class="searchArea simpleSearch">
+
                 <div id="searchBar">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" fill="black"/></svg>
-                    <input type="text" placeholder="Search for restaurants">
-                <label for="hiddenCheckbox">
-                    <svg id="filterIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74805 5.31713H3.5207M14.2527 5.31713H9.84492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.74805 10.6492L6.29953 10.6492M14.2527 10.6492L12.5758 10.6492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="6.7317" cy="5.35083" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/><ellipse cx="9.36549" cy="10.6492" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/></svg>
-                </label>
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" fill="black"/></svg>
+                    <input id="simpleSearchInput" type="text" placeholder="Search for restaurants" aria-label="Search For Restaurants">
+                    <!-- label for the advanced/simple search toggle -->
+                    <label for="hiddenCheckbox">
+                        <svg id="filterIcon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><title aria-label="Button For Changing Search To Advanced">Switch to Advanced Search</title><path d="M1.74805 5.31713H3.5207M14.2527 5.31713H9.84492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.74805 10.6492L6.29953 10.6492M14.2527 10.6492L12.5758 10.6492" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="6.7317" cy="5.35083" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/><ellipse cx="9.36549" cy="10.6492" rx="1.52467" ry="1.52467" stroke="#0A0A0A" stroke-width="1.5"/></svg>
+                    </label>
                 </div>
-                <div class="searchButton">
+
+                <button class="searchButton" aria-label="Search Button">
                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
-                </div>
+                </button>
+
             </div>
+
+            <!-- Advanced Searchbar:  -->
 
             <div class="searchArea advancedSearch">
                 <div id="inputs">
+
                     <div id="cusineSelectContainer">
                         <select name="Cusine" id="cusineSelect">
                             <option>Cusine</option>
                         </select>
                     </div>
+
                     <div id="locationInputContainer">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.657 16.657L13.414 20.9C13.039 21.2746 12.5306 21.4851 12.0005 21.4851C11.4704 21.4851 10.962 21.2746 10.587 20.9L6.343 16.657C5.22422 15.5382 4.46234 14.1127 4.15369 12.5609C3.84504 11.009 4.00349 9.40051 4.60901 7.93873C5.21452 6.47694 6.2399 5.22754 7.55548 4.3485C8.87107 3.46947 10.4178 3.00029 12 3.00029C13.5822 3.00029 15.1289 3.46947 16.4445 4.3485C17.7601 5.22754 18.7855 6.47694 19.391 7.93873C19.9965 9.40051 20.155 11.009 19.8463 12.5609C19.5377 14.1127 18.7758 15.5382 17.657 16.657V16.657Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <input type="text" placeholder="Location">
                     </div>
+
                     <div id="nameInputContainer">
                         <input type="text" placeholder="Name">
                     </div>
-                    <div class="searchButton">
+
+                    <button class="searchButton" aria-label="Search Button">
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.248 19.2311C18.8577 19.6215 18.225 19.6221 17.834 19.2325L12.9375 14.3542C12.5347 14.6725 12.0593 14.9223 11.5113 15.1034C10.9632 15.2845 10.3692 15.375 9.72917 15.375C8.12969 15.375 6.77497 14.8194 5.66498 13.7083C4.55499 12.5972 4 11.2569 4 9.6875C4 8.11806 4.55556 6.77778 5.66667 5.66667C6.77778 4.55556 8.12153 4 9.69792 4C11.2743 4 12.6146 4.55556 13.7188 5.66667C14.8229 6.77778 15.375 8.1191 15.375 9.69063C15.375 10.3135 15.2882 10.8924 15.1146 11.4271C14.941 11.9618 14.6806 12.4653 14.3333 12.9375L19.2454 17.8132C19.6387 18.2036 19.6399 18.8393 19.248 19.2311V19.2311ZM9.71569 13.4167C10.7559 13.4167 11.6328 13.0538 12.3464 12.3281C13.0599 11.6024 13.4167 10.7222 13.4167 9.6875C13.4167 8.65278 13.0589 7.77257 12.3433 7.04688C11.6277 6.32118 10.7518 5.95833 9.71569 5.95833C8.66797 5.95833 7.77981 6.32118 7.05121 7.04688C6.32263 7.77257 5.95833 8.65278 5.95833 9.6875C5.95833 10.7222 6.3216 11.6024 7.04815 12.3281C7.7747 13.0538 8.66388 13.4167 9.71569 13.4167Z" /></svg>
-                    </div>
+                    </button>
+
                 </div>
+                <!-- label for the advanced/simple search toggle -->
                 <label for="hiddenCheckbox">
                     <h2>Simple Search</h2>
                 </label>
+
             </div>
 
         </div>
-        <div class="cardContainer">
+
+        <div class="cardContainer" role="region" aria-label="Search Outcome">
+                <!-- Cards Shown Initially -->
                 <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
-            <div id="allRestaurantsContainer" v-show="this.showMore">
+            <div id="allRestaurantsContainer" ref="restaurantList" v-show="this.showMore">
                 <RestaurantCard v-for="(data, index) in moreApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
             </div>
         </div>
-        <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" ><h2>Show {{ this.showMore ? "Less" : "More" }}</h2><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
+
+        <button class="toggleRestaurantsButton" @click="this.toggleRestaurants()" :aria-label="this.showMore ? 'Show Less: The Restaurants are above this.' : 'Show More'" ><h2 aria-hidden="true">Show {{ this.showMore ? "Less" : "More" }}</h2><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></button>
     </div>
     
 </template>
 
 <script>
 import RestaurantCard from '../components/RestaurantCard.vue';
-import TestimonialCard from '../components/TestimonialCard.vue';
+import FeedbackCard from '../components/FeedbackCard.vue';
 
 export default {
     data() {
         return {
             featuredApiData: [],
-            testimonials: [
+            feedbacks: [
                 {
                     experience: "Exquisite flavors, impeccable service, and a memorable ambiance – DineEase made our celebration truly special!",
                     contributor: "Robert & Emily"
@@ -137,7 +158,7 @@ export default {
     },
     components:{
         RestaurantCard,
-        TestimonialCard
+        FeedbackCard
     },
     methods: {
         fetchFeaturedData() {
@@ -157,6 +178,10 @@ export default {
             })
             .catch(err => console.log(err))
         },
+        toggleRestaurants(){
+            this.showMore = !this.showMore
+            this.$refs.restaurantList.scrollIntoView({behavior: 'smooth'})
+        }
     },
     mounted() {
         this.fetchFeaturedData().then(
@@ -272,14 +297,16 @@ export default {
         align-items: center;
         border-radius: 10px;
         background-color: var(--purpleColor);
-        padding: 0 5%;
+        padding: 5%;
         color: white;
         transition: all 0.2s ease-in-out;
         user-select: none;
+        border: none;
     }
     #hero #heroTextContainer #exploreButton svg{
         fill: white;
         transition: all 0.2s ease-in-out;
+        scale: 1.1;
     }
     #hero #heroTextContainer #exploreButton:hover svg{
         fill: black;
@@ -299,6 +326,7 @@ export default {
     #hero #heroTextContainer #exploreButton h2{
         font-weight: 500;
         font-size: medium;
+        margin: 0;
         margin-left: 10px;
     }
 
@@ -337,16 +365,16 @@ export default {
 /*=====  End of Style of The Featured Restaurants Section  ======*/
 
 /*========================================================
-=            Style of the Testimonials section            =
+=            Style of the Feedback section            =
 =========================================================*/
 
-    #testimonials{
+    #feedbacks{
         margin-top: 50px;
         background-color: var(--lightPurpleColor);
         padding: 20% 4% 20% 4%;
     }
 
-    #testimonials #testimonialHeader{
+    #feedbacks #feedbackHeader{
         display: flex;
         align-items: flex-end;
         min-height: 120px;
@@ -354,27 +382,27 @@ export default {
         padding-top: 20px;
     }
 
-    #testimonials #testimonialHeader .experienceCard{
+    #feedbacks #feedbackHeader .experienceCard{
         display: none;
     }
 
-    #testimonials #testimonialHeader #decorQuote{
+    #feedbacks #feedbackHeader #decorQuote{
         position: absolute;
         height: 50%;
         top: 0;
         right: 50%;
     }
 
-    #testimonials #testimonialHeader h1{
+    #feedbacks #feedbackHeader h1{
         margin: 0;
         text-align: center;
     }
 
 /*====================================================
-=            Style Of The Testimonial Card            =
+=            Style Of The feedback Card            =
 ======================================================*/
 
-    #testimonialCardContainer{
+    #feedbackCardContainer{
         padding-top: 25px;
         display: flex;
         flex-direction: column;
@@ -420,10 +448,10 @@ export default {
         font-weight: bold;
     }
 
-/*=====  End of Style Of The Testimonial Card  ======*/
+/*=====  End of Style Of The feedback Card  ======*/
 
 
-/*=====  End of Style of the Testimonials section  ======*/
+/*=====  End of Style of the feedbacks section  ======*/
 
 
 /*==========================================================
@@ -467,6 +495,10 @@ export default {
     .advancedSearch{
         display: none;
         flex-direction: column;
+    }
+
+    .searchButton{
+        border: none;
     }
 
     .advancedSearch #inputs{
@@ -528,7 +560,7 @@ export default {
     }
 
     .advancedSearch .searchButton{
-        width: 90%; /*Remove for pc */
+        width: 90%;
     }
     
 /*=====  End of Style for changing the search type (advanced/simple)  ======*/
@@ -604,6 +636,8 @@ export default {
         color: var(--purpleColor);
         user-select: none;
         align-self: center;
+        border: none;
+        background-color: transparent;
     }
     .toggleRestaurantsButton:hover{
         cursor: pointer;
@@ -643,16 +677,16 @@ export default {
 =============================================*/
 
     @media screen and (min-width: 375px){
-        #testimonials #testimonialHeader{
+        #feedbacks #feedbackHeader{
             padding-top: 0;
         }
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             position: absolute;
             height: 75%;
             top: 0;
             left: 0;
         }
-        #testimonials #testimonialHeader h1{
+        #feedbacks #feedbackHeader h1{
             text-align: left;
         }
         .advancedSearch #inputs{
@@ -666,6 +700,9 @@ export default {
         }
         .advancedSearch #inputs{
             width: 100%;
+        }
+        #hero #heroTextContainer #exploreButton{
+            padding: 20px 50px;
         }
     }
 
@@ -685,8 +722,11 @@ export default {
     }
 
     @media screen and (min-width: 550px){
-        #testimonials{
+        #feedbacks{
             padding: 10% 4% 10% 4%;
+        }
+        #hero #heroTextContainer #exploreButton h2{
+            font-size: large;
         }
     }
 
@@ -700,10 +740,10 @@ export default {
     }
 
     @media screen and (min-width: 765px){
-        #testimonials{
+        #feedbacks{
             padding: 4%;
         }
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             position: absolute;
             height: 75%;
             top: 30px;
@@ -712,7 +752,7 @@ export default {
     }
 
     @media screen and (min-width: 900px){
-        #testimonialCardContainer .experienceCard{
+        #feedbackCardContainer .experienceCard{
             padding: 2.5%;
         }
     }
@@ -907,9 +947,9 @@ export default {
             left: -280px;
         }
 
-        /*----------  Testimonials Section ----------*/
+        /*----------  feedbacks Section ----------*/
 
-        #testimonials{
+        #feedbacks{
             display: flex;
             height: 75vh;
             gap: 3%;
@@ -918,11 +958,11 @@ export default {
             padding: 2%;
         }
 
-        #testimonials .experienceCard{
+        #feedbacks .experienceCard{
             padding: 5%;
         }
         
-        #testimonials #testimonialHeader{
+        #feedbacks #feedbackHeader{
             flex-direction: column;
             width: 45%;
             height: 65%;
@@ -932,33 +972,33 @@ export default {
             padding-left: 2%;
         }
 
-        #testimonials #testimonialHeader h1{
+        #feedbacks #feedbackHeader h1{
             font-size: 250%;
         }
 
-        #testimonials #testimonialHeader #quote{
+        #feedbacks #feedbackHeader #quote{
             height: 60%;
         }
 
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             position: absolute;
             height: 20%;
             top: 10px;
             left: -50px;
         }
         
-        #testimonials #testimonialHeader .experienceCard{
+        #feedbacks #feedbackHeader .experienceCard{
             display: flex;
             width: 85%;
         }
         
-        #testimonials #testimonialCardContainer{
+        #feedbacks #feedbackCardContainer{
             width: 45%;
             height: 100%;
             justify-content: center;
         }
 
-        #testimonials #testimonialCardContainer .experienceCard:first-of-type{
+        #feedbacks #feedbackCardContainer .experienceCard:first-of-type{
             display: none;
         }
         
@@ -1028,7 +1068,7 @@ export default {
             font-size: large;
         }
 
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             top: 15px;
         }
     }
@@ -1039,9 +1079,9 @@ export default {
          }
 
         #hero #heroTextContainer p{
-            font-size: x-large;
+            font-size: larger;
         }
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             left: -45px;
             top: 25px;
         }
@@ -1059,7 +1099,7 @@ export default {
         #hero #heroTextContainer p{
             font-size: x-large;
         }
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             left: -40px;
             top: 35px;
         }
@@ -1070,14 +1110,14 @@ export default {
     }
 
     @media screen and (min-width: 1600px) {
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             left: -35px;
             top: 45px;
         }
     }
 
     @media screen and (min-width: 1800px) {
-        #testimonials #testimonialHeader #decorQuote{
+        #feedbacks #feedbackHeader #decorQuote{
             left: -30px;
             top: 55px;
         }
