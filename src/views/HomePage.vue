@@ -141,10 +141,11 @@ export default {
     },
     methods: {
         fetchFeaturedData() {
-            fetch("https://es2025-s17-hu-r1-backend.onrender.com/api/v1/restaurants/top-rated")
+           return fetch("https://es2025-s17-hu-r1-backend.onrender.com/api/v1/restaurants/top-rated")
             .then(res => res.json())
             .then(data => {
                 this.featuredApiData = data;
+                console.log(this.featuredApiData)
             })
             .catch(err => console.log(err));
         },
@@ -154,14 +155,15 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.moreApiData = data.filter(item => !this.featuredApiData.some(item2 => item.name == item2.name))
+                console.log(this.moreApiData)
             })
             .catch(err => console.log(err))
         },
     },
     mounted() {
-        this.fetchFeaturedData();
-
-        this.fetchRestaurants();
+        this.fetchFeaturedData().then(
+            () => this.fetchRestaurants()
+        )
     },
 }
 </script>
@@ -838,10 +840,13 @@ export default {
         /*----------  Featured Restaurants Section  ----------*/
 
         #featuredRestaurants{
-            height: 75vh;
             padding: 0 2%;
         }
 
+        #featuredRestaurants .headerContainer{
+            margin-bottom: 25px;
+        }
+        
         #featuredRestaurants .cardContainer{
             padding: 0 5%;
         }
