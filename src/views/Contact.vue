@@ -1,37 +1,43 @@
 <template>
 <div id="content">
 
-    <div id="contactInformationContainer">
+    <div id="contactInformationContainer" role="region" aria-label="Contact Information Section">
         <div class="headerContainer">
             <h1>Contact Information</h1>
             <h2>Have an inquiry? Fill out the form to contact our team.</h2>
         </div>
         <div id="dataContainer">
-            <div class="row"><img src="../assets/images/phone.svg" alt="This is a fun icon depicting a phone"><h1>+36 30 123 4567</h1></div>
-            <div class="row"><img src="../assets/images/email.svg" alt="This is a fun icon depicting a letter"><h1>support@dineease.com</h1></div>
-            <div class="row"><img src="../assets/images/location-filled.svg" alt="This is a fun icon depicting a location pin"><h1>132 Dartmouth Street Boston, Massachusetts 02156 United States</h1></div>
+            <div class="row"><img aria-hidden="true" src="../assets/images/phone.svg" alt="This is a fun icon depicting a phone"><h1>+36 30 123 4567</h1></div>
+            <div class="row"><img aria-hidden="true" src="../assets/images/email.svg" alt="This is a fun icon depicting a letter"><h1>support@dineease.com</h1></div>
+            <div class="row"><img aria-hidden="true" src="../assets/images/location-filled.svg" alt="This is a fun icon depicting a location pin"><h1>132 Dartmouth Street Boston, Massachusetts 02156 United States</h1></div>
         </div>
         <div id="bottomCircle1"></div>
         <div id="bottomCircle2"></div>
         <div class="socialIconsContainer">
-            <img src="../assets/images/Facebook Iconvector.svg" alt="This is an icon to our Facebook page" title="This is an icon to our Facebook page">
-            <img src="../assets/images/Instagram Iconvector.svg" alt="This is an icon to our Instagram page" title="This is an icon to our Instagram page">
-            <img src="../assets/images/Twitter Iconvector.svg" alt="This is an icon to our Twitter page" title="This is an icon to our Twitter page">
+            <button aria-label="Go to our Facebook Page">
+                    <img aria-hidden="true" src="../assets/images/Facebook Iconvector.svg" alt="This is an icon to our Facebook page" title="This is an icon to our Facebook page">
+            </button>
+            <button aria-label="Go to our Instagram Page">
+                    <img aria-hidden="true" src="../assets/images/Instagram Iconvector.svg" alt="This is an icon to our Instagram page" title="This is an icon to our Instagram page">
+            </button>
+            <button aria-label="Go to our Twitter">
+                    <img aria-hidden="true" src="../assets/images/Twitter Iconvector.svg" alt="This is an icon to our Twitter page" title="This is an icon to our Twitter page">
+            </button>
         </div>
     </div>
 
-    <div id="informationContainer">
+    <div id="informationContainer" role="region" aria-label="Contact Form Section" >
         <div class="headerContainer">
             <h1>Contact Us</h1>
             <h2>Have an inquiry? Fill out the form to contact our team.</h2>
         </div>
         <div id="formContainer">
             <form action="">
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="email" placeholder="Email">
-                <input type="number" placeholder="Phone Number">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="text" placeholder="First Name" aria-label="First Name">
+                <input type="text" placeholder="Last Name" aria-label="Last Name">
+                <input type="email" placeholder="Email" aria-label="Email">
+                <input type="number" placeholder="Phone Number" aria-label="Phone Number">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message" aria-label="Your Message"></textarea>
                 <button>Send Message</button>
             </form>
         </div>
