@@ -4,23 +4,37 @@
         <h2>Embracing the Joy of Dining</h2>
     </div>
     <div id="timeline" role="region" aria-label="Timeline">
+
+        <!-- Not Visible Timeline, Only Visible To The screenReader -->
+
+        <h1 class="hidden">2019</h1>
+        <p class="hidden">Birth of DineEase</p>
+        <h2 class="hidden">2020</h2>
+        <p class="hidden">Culinary Connections Made</p>
+        <h3 class="hidden">2021</h3>
+        <p class="hidden">Curatorial Excellence Emerges</p>
+        <h4 class="hidden">2022</h4>
+        <p class="hidden">Redefining Dining Landscape</p>
+        <h5 class="hidden">2023</h5>
+        <p class="hidden">Redefining Dining Landscape</p>
+
         <div id="topRow">
-            <div class="cell"> <h3 class="date">2019</h3> </div>
-            <div class="cell"> <h3>Culinary Connections Made</h3> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> </div>
-            <div class="cell"> <h3 class="date">2021</h3> </div>
-            <div class="cell"> <h3>Redefining Dining Landscape</h3> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> </div>
-            <div class="cell"> <h3 class="date">2023</h3> </div>
+            <div class="cell"> <h3 aria-hidden="true" class="date">2019</h3> </div>
+            <div class="cell"> <h3 aria-hidden="true">Culinary Connections Made</h3> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> </div>
+            <div class="cell"> <h3 aria-hidden="true" class="date">2021</h3> </div>
+            <div class="cell"> <h3 aria-hidden="true">Redefining Dining Landscape</h3> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> </div>
+            <div class="cell"> <h3 aria-hidden="true" class="date">2023</h3> </div>
         </div>
         <div id="bottomRow">
-            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3>Birth of DineEase</h3> </div>
-            <div class="cell"> <h3 class="date">2020</h3> </div>
-            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3>Curatorial Excellence Emerges</h3> </div>
-            <div class="cell"> <h3 class="date">2022</h3> </div>
-            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3>Redefining Dining Landscape</h3> </div>
+            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3 aria-hidden="true">Birth of DineEase</h3> </div>
+            <div class="cell"> <h3 aria-hidden="true" class="date">2020</h3> </div>
+            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3 aria-hidden="true">Curatorial Excellence Emerges</h3> </div>
+            <div class="cell"> <h3 aria-hidden="true" class="date">2022</h3> </div>
+            <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3 aria-hidden="true">Redefining Dining Landscape</h3> </div>
         </div>
     </div>
 
-    <div class="headerContainer">
+    <div class="headerContainer" role="region" aria-label="Our Team">
         <h1>Meet our team</h1>
         <h2>The Culinary Visionaries Behind DineEase</h2>
     </div>
@@ -89,6 +103,18 @@ export default {
 /*=============================================
 =            Style of the Timeline            =
 =============================================*/
+
+    /* Not Visible Timeline, Only Visible To The screenReader  */
+    .hidden{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
 
     #timeline{
         width: 100%;
