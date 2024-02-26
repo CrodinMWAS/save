@@ -1,5 +1,5 @@
 <template>
-    <div id="hero" role="banner" aria-label="Welcome Section / Main Banner">
+    <div id="hero" role="region" aria-label="Welcome Section / Main Banner">
         <div id="fadedCircle" aria-hidden="true"></div>
         <div id="heroTextContainer">
             <h1>DineEase: Exceptional Dining Awaits.</h1>

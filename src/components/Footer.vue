@@ -3,15 +3,15 @@
         <div id="infoColumn">
             <img aria-hidden="true" src="../assets/images/Logomarkvector.svg" alt="DineEase Logo." title="DineEase Logo.">
             <router-link to="Privacy-Policy">
-                <h3 @click="scrollToTop()">
+                <h1 @click="scrollToTop()">
                     Privacy Policy
-                </h3>
+                </h1>
                 </router-link>
             <div id="contactContainer">
-                <h3>+36 30 123 4567</h3>
-                <h3>support@dineease.com</h3>
+                <h1>+36 30 123 4567</h1>
+                <h1>support@dineease.com</h1>
             </div>
-            <h3>© 2024 - All rights reserved</h3>
+            <h1>© 2024 - All rights reserved</h1>
         </div>
         <div id="socialsColumn">
             <h2>Follow Us</h2>

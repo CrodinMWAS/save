@@ -4,7 +4,7 @@
             <img src="../assets/images/Logo.png" alt="This is a logo of our website. It takes you back to our homepage." title="Go to homepage">
         </router-link>
         <div class="navButtonsContainer" aria-label="Toggle Navigation Menu">
-            <button aria-label="Leave Menu" id="backButton" @click="this.toggleNavOverlay()"><img src="../assets/images/Chevron Down Icon@2x.png" alt="Menu Icon" title="Leave Menu"></button>
+            <button aria-label="Leave Menu" id="backButton" @click="this.toggleNavOverlay()"><img aria-hidden="true" src="../assets/images/Chevron Down Icon@2x.png" alt="Menu Icon" title="Leave Menu"></button>
             <router-link aria-label="Go To The Homepage" to="/" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Home</router-link>
             <router-link aria-label="Go To The About Us page" to="/AboutUs" @click="this.showNavButtons ? this.toggleNavOverlay() : '' ">About Us</router-link>
             <router-link aria-label="Go To The Contact page" to="/Contact" @click="this.showNavButtons ? this.toggleNavOverlay() : ''  ">Contact</router-link>
@@ -28,6 +28,7 @@ export default {
         toggleNavOverlay(){
             this.showNavButtons = !this.showNavButtons
             this.$emit("toggleOverlay")
+            this.$nextTick(document.querySelector("#backButton").focus())
         }
     }
 }

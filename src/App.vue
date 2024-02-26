@@ -198,11 +198,12 @@ export default{
     color: var(--blackColor)
   }
 
-  #footer #infoColumn h3{
+  #footer #infoColumn h1{
     font-weight: normal;
+    font-size: 1.17em;
   }
 
-  #footer #infoColumn > h3:last-of-type{
+  #footer #infoColumn > h1:last-of-type{
     font-size: 80%
   }
 

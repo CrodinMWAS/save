@@ -1,5 +1,5 @@
 <template>
-    <div class="card" role="listitem" :aria-label="`Restaurant: ${name} Rated: ${rating}`">
+    <div class="card" role="article" :aria-label="`Restaurant: ${name} Rated: ${rating}`">
         <div class="cardPicture" :style="{ backgroundImage: `url(${image})` }" aria-hidden="true"></div>
         <div class="cardInfoContainer">
 
