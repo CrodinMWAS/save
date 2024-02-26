@@ -297,7 +297,7 @@ export default {
     
     @media screen and (min-width: 610px) {
         #connectionSection #connectionContainer > h1, .headerContainer h1{
-            font-size: 300%;
+            font-size: 250%;
         }
     }
 
