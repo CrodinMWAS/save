@@ -1,5 +1,5 @@
 <template>
-    <div id="footer" role="region" aria-label="Footer">
+    <footer id="footer" role="contentinfo" aria-label="Footer">
         <div id="infoColumn">
             <img aria-hidden="true" src="../assets/images/Logomarkvector.svg" alt="DineEase Logo." title="DineEase Logo.">
             <router-link to="Privacy-Policy">
@@ -13,9 +13,9 @@
             </div>
             <h1>© 2024 - All rights reserved</h1>
         </div>
-        <div id="socialsColumn">
+        <section id="socialsColumn">
             <h2>Follow Us</h2>
-            <div class="socialIconsContainer">
+            <nav class="socialIconsContainer">
                 <button aria-label="Go to our Facebook Page">
                     <img aria-hidden="true" src="../assets/images/Facebook Iconvector.svg" alt="This is an icon to our Facebook page" title="This is an icon to our Facebook page">
                 </button>
@@ -25,9 +25,9 @@
                 <button aria-label="Go to our Twitter">
                     <img aria-hidden="true" src="../assets/images/Twitter Iconvector.svg" alt="This is an icon to our Twitter page" title="This is an icon to our Twitter page">
                 </button>
-            </div>
-        </div>
-    </div>
+            </nav>
+        </section>
+    </footer>
 </template>
 
 <script>

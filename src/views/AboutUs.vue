@@ -1,11 +1,12 @@
 <template>
-    <div class="headerContainer">
+    <header class="headerContainer">
         <h1>About Us</h1>
         <h2>Embracing the Joy of Dining</h2>
-    </div>
-    <div id="timeline" role="region" aria-label="Timeline">
+    </header>
+    <section id="timeline" role="region" aria-label="Timeline">
 
         <!-- Not Visible Timeline, Only Visible To The screenReader -->
+        <!-- Adding This was a must, Due To My Timeline Design and Structure. -->
 
         <h1 class="hidden">2019</h1>
         <p class="hidden">Birth of DineEase</p>
@@ -32,17 +33,17 @@
             <div class="cell"> <h3 aria-hidden="true" class="date">2022</h3> </div>
             <div class="cell"> <div class="lineContainer"><div class="line"><div class="circle"></div></div></div> <h3 aria-hidden="true">Redefining Dining Landscape</h3> </div>
         </div>
-    </div>
+    </section>
 
-    <div class="headerContainer" role="region" aria-label="Our Team">
+    <header class="headerContainer" role="banner" aria-label="Our Team">
         <h1>Meet our team</h1>
         <h2>The Culinary Visionaries Behind DineEase</h2>
-    </div>
-    <div id="employeeContainer" role="region" aria-label="Employees">
+    </header>
+    <section id="employeeContainer" role="region" aria-label="Employees">
         <Employee v-for="(employee, index) in employees" :key="index" :image="employee.image" :name="employee.name" :title="employee.title" ></Employee>
-    </div>
+    </section>
 
-    <div id="connectionSection" role="region" aria-label="Connection Region">
+    <section id="connectionSection" role="region" aria-label="Connection Region">
         <div id="connectionContainer">
             <h1>Connect with DineEase</h1>
             <p>Hungry for more? Whether you have questions, feedback, or simply wish to share your culinary story, we're eager to hear from you. Dive deeper into the DineEase experience and let's make every meal memorable.</p>
@@ -50,7 +51,7 @@
                 <div id="connectionButton" @click="scrollToTop()"><h1>Connect With DineEase</h1></div>
             </router-link>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

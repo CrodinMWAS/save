@@ -232,7 +232,7 @@ export default{
     }
 
     #footer #socialsColumn{
-      width: 30%;
+      width: 40%;
     }
 
     .socialIconsContainer{
@@ -242,6 +242,7 @@ export default{
     .socialIconsContainer button{
       background-color: transparent;
       border: none;
+      padding: 0;
     }
   }
 
