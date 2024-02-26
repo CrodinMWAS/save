@@ -34,6 +34,8 @@ export default{
     --purpleColor: #7c3aed;
     --lightPurpleColor: #ede9fe;
     --pinkColor: #ded6fb;
+    --dividerColor: #f6f9ff;
+    --lightStripColor: #c4b5fd;
   }
 
   body{

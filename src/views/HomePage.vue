@@ -10,14 +10,23 @@
                 <h3>Explore Restaurants</h3>
             </div>
         </div>
-        <div id="purpleStrip"></div>
-        <div id="lightPurpleStrip"></div>
+        <div id="middleStrip">
+            <div id="topStrip">
+                <div class="lightStrip"></div>
+            </div>
+
+            <div class="purpleStrip"></div>
+            <div class="divider"></div>
+            <div class="lightPurpleStrip"></div>
+
+            <div id="bottomStrip">
+                <div class="lightStrip"></div>
+                <div class="purpleStrip"></div>
+            </div>
+        </div>
         <div id="heroImageContainer">
             <img src="../assets/images/HeroIllustration.png" alt="This is a cool illustration of a man eating a meal and rating it 5 stars." title="This is a cool illustration of a man eating a meal and rating it 5 stars.">
         </div>
-        <div id="imageLightPurpleStrip"></div>
-        <div id="imageSemiLightPurpleStrip"></div>
-        <div id="imagePurpleStrip"></div>
         <hr>
     </div>
 
@@ -194,16 +203,15 @@ export default {
 
     .cardTopRow{
         display: flex;
-        justify-content: space-between;
     }
 
     .restaurantName{
-        width: 50%;
+        width: 100%;
         font-size: larger;
     }
 
     .restaurantRatings{
-        width: 25%;
+        width: fit-content;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -463,12 +471,16 @@ export default {
 
     .advancedSearch #inputs{
         display: flex;
-        flex-direction: column; /*Remove for pc */
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 20px;
     }
 
+    .advancedSearch #inputs > div{
+        max-width: 290px;
+    }
+    
     .advancedSearch label h2{
         margin: 0;
         color: var(--purpleColor);
@@ -660,7 +672,6 @@ export default {
 
     @media screen and (min-width: 500px){
         .restaurantName{
-            width: 50%;
             font-size: x-large;
         }
 
@@ -708,24 +719,26 @@ export default {
 
     @media screen and (min-width: 992px){
         
-        /*----------  Hero Section  ----------*/
+    /*----------  Hero Section  ----------*/
         
         #hero{
             display: flex;
             flex-direction: row;
             padding: 4% 2%;
+            position: relative;
         }
+
         #hero hr{
             display: none;
         }
-        #heroTextContainer{
-            width: 45%;
-        }
 
+        #heroTextContainer{
+            width: 60%;
+        }
+        
         #hero #heroImageContainer{
-            width: 50%;
+            width: 40%;
             margin: 0;
-            height: 400px;
         }
 
         #fadedCircle{
@@ -735,16 +748,102 @@ export default {
             width: 60vw;
             height: 60vh;
             filter: blur(30px);
-            top: -25vh;
+            top: -40vh;
             right: -25vw;
             z-index: -5;
         }
+        
+        /*=============================================
+        =            Style Of The Strips            =
+        =============================================*/
+
+        .purpleStrip, .divider, .lightPurpleStrip, .lightStrip{
+            position: absolute;
+            transform:  skew(-3deg); 
+            height: 100%;
+        }
+        .purpleStrip{
+            background-color: var(--purpleColor);
+        }
+        .divider{
+            background-color: var(--dividerColor);
+        }
+        .lightPurpleStrip{
+            background-color: var(--lightStripColor);
+        }
+        .lightStrip{
+            background-color: var(--lightPurpleColor);
+        }
+        
+            /*----------  Style of Strip In the Middle  ----------*/
+
+        #middleStrip{
+            position: absolute;
+            width: calc(100% + 20px);
+            height: 60px;
+            transform: rotate(-6deg) skew(-3deg);
+            z-index: -1;
+            left: -10px;
+            bottom: 25%;
+        }
+        #middleStrip > .purpleStrip{
+            width: 30%;
+        }
+        #middleStrip > .divider{
+            width: 30%;
+            left: 30%;
+        }
+        #middleStrip > .lightPurpleStrip{
+            width: 40%;
+            left: 60%;
+        }
+
+        /*----------  Style of Strip On the Bottom  ----------*/
+
+        #bottomStrip{
+            position: absolute;
+            width: calc(100% + 20px);
+            height: 60px;
+            transform: skew(-3deg);
+            z-index: -1;
+            left: -10px;
+            bottom: -59px;
+        }
+        #bottomStrip .lightStrip{
+            width: 18%;
+        }
+        #bottomStrip .purpleStrip{
+            width: 40%;
+            left: 89%;
+        }
+
+        /*----------  Style of Strip On the Top ----------*/
+
+        #topStrip{
+            position: absolute;
+            width: calc(100% + 20px);
+            height: 60px;
+            transform: skew(-3deg);
+            z-index: -1;
+            top: -60px;
+            left: -10px;
+        }
+        #topStrip .lightStrip{
+            left: 75%;
+            width: 20%;
+        }
+
+        /*=====  End of Style Of The Strips  ======*/
         
         /*----------  Featured Restaurants Section  ----------*/
 
         #featuredRestaurants{
             height: 75vh;
             padding: 0 2%;
+        }
+
+        #featuredRestaurants .cardContainer{
+            padding: 0 5%;
         }
 
         #featuredRestaurants .headerContainer{
@@ -759,29 +858,25 @@ export default {
         .cardContainer{
             flex-direction: row;
             height: 85%;
+            gap: 20px;
         }
 
         .cardContainer .card{
             display: flex;
             flex-direction: column;
-            width: calc(95% / 3);
+            width: calc(97% / 3);
             height: 500px;
             background-color: white;
-        }
-
-        .cardContainer .card .restaurantName{
-            font-size: large;
         }
 
         .cardContainer .card .cardPicture{
             height: 100%;
             aspect-ratio: 1;
-            margin-bottom: 10%;
+            margin-bottom: 1rem;
         }
 
         .cardContainer .card .cardInfoContainer{
             justify-content: space-between;
-            height: 100%;
         }
         
         .featuredCircle{
@@ -894,6 +989,7 @@ export default {
 
         #allRestaurants .cardContainer .card{
             width: calc(90% / 3);
+            min-width: 300px;
         }
         
         #allRestaurants .simpleSearch{
@@ -904,12 +1000,83 @@ export default {
         #allRestaurants #allRestaurantsContainer{
             flex-direction: row;
             flex-wrap: wrap;
-            gap: 0;
             width: 100%;
-            gap: 35px;
+            gap: 20px;
             justify-content: center;
         }
 
+        #allRestaurants .toggleRestaurantsButton{
+            margin: 25px 0 50px 0;
+        }
+
+    }
+
+    @media screen and (min-width: 1100px) {
+        #hero #heroTextContainer{
+            gap: 5%;
+        }
+
+        #hero #heroTextContainer p{
+            font-size: large;
+        }
+
+        .restaurantDescription{
+            font-size: large;
+        }
+
+        #testimonials #testimonialHeader #decorQuote{
+            top: 15px;
+        }
+    }
+
+     @media screen and (min-width: 1200px) {
+         #hero #heroTextContainer h1{
+            font-size: 230%;
+         }
+
+        #hero #heroTextContainer p{
+            font-size: x-large;
+        }
+        #testimonials #testimonialHeader #decorQuote{
+            left: -45px;
+            top: 25px;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        #heroTextContainer{
+            gap: 5%;
+        }
+
+        #hero #heroTextContainer h1 {
+            font-size: 300%;
+        }
+
+        #hero #heroTextContainer p{
+            font-size: x-large;
+        }
+        #testimonials #testimonialHeader #decorQuote{
+            left: -40px;
+            top: 35px;
+        }
+
+        .experienceCard{
+            padding: 28px;
+        }
+    }
+
+    @media screen and (min-width: 1600px) {
+        #testimonials #testimonialHeader #decorQuote{
+            left: -35px;
+            top: 45px;
+        }
+    }
+
+    @media screen and (min-width: 1800px) {
+        #testimonials #testimonialHeader #decorQuote{
+            left: -30px;
+            top: 55px;
+        }
     }
         
 /*=====  End of Media Queries  ======*/
