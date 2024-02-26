@@ -239,7 +239,7 @@ export default {
         height: 100%;
         width: 100%;
         max-width: 690px;
-        gap: 0.67em;
+        gap: 2em;
     }
 
     #connectionSection h1{

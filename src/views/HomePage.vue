@@ -35,8 +35,11 @@
 
     <div id="testimonials">
         <div id="testimonialHeader">
-            <img id="decorQuote" src="../assets/images/Quote markvector.svg" alt="This is a decorative quote.">
-            <h1>Delightful Experiences Shared by Our Guests</h1>
+            <div id="quote">
+                <img id="decorQuote" src="../assets/images/Quote markvector.svg" alt="This is a decorative quote.">
+                <h1>Delightful Experiences Shared by Our Guests</h1>
+            </div>
+            <TestimonialCard v-if="testimonials.length > 0" :experience="testimonials[0].experience" :contributor="testimonials[0].contributor"></TestimonialCard>
         </div>
         <div id="testimonialCardContainer">
             <TestimonialCard v-for="(testimonial, index) in this.testimonials" :key="index" :experience="testimonial.experience" :contributor="testimonial.contributor"></TestimonialCard>
@@ -90,7 +93,6 @@
                 <RestaurantCard v-for="(data, index) in featuredApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
             <div id="allRestaurantsContainer" v-show="this.showMore">
                 <RestaurantCard v-for="(data, index) in moreApiData" :key="index" :image="data.image" :name="data.name" :rating="data.rating" :description="data.description"></RestaurantCard>
-                <!-- <div class="toggleRestaurantsButton" @click="this.showMore = false" ><h5>Show Less</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div> -->
             </div>
         </div>
         <div class="toggleRestaurantsButton" @click="this.showMore = !this.showMore" ><h5>Show {{ this.showMore ? "Less" : "More" }}</h5><svg :class="{rotatedIcon: this.showMore}" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.41107 6.91076C4.73651 6.58533 5.26414 6.58533 5.58958 6.91076L10.0003 11.3215L14.4111 6.91076C14.7365 6.58533 15.2641 6.58533 15.5896 6.91076C15.915 7.2362 15.915 7.76384 15.5896 8.08928L10.5896 13.0893C10.2641 13.4147 9.73651 13.4147 9.41107 13.0893L4.41107 8.08928C4.08563 7.76384 4.08563 7.2362 4.41107 6.91076Z" /></svg></div>
@@ -344,6 +346,10 @@ export default {
         padding-top: 20px;
     }
 
+    #testimonials #testimonialHeader .experienceCard{
+        display: none;
+    }
+
     #testimonials #testimonialHeader #decorQuote{
         position: absolute;
         height: 50%;
@@ -367,11 +373,13 @@ export default {
         gap: 25px;
     }
 
-    #testimonialCardContainer .experienceCard{
+    .experienceCard{
         background-color: #F9F9F9;
         display: flex;
         padding: 5% 2.5%;
         gap: 10px;
+        border-radius: 5px;
+        line-height: 1.5;
     }
 
     .experienceCard .quoteColumn{
@@ -801,15 +809,59 @@ export default {
         }
 
         /*----------  Testimonials Section ----------*/
-        
-        /* #testimonials{
+
+        #testimonials{
             display: flex;
-            flex-direction: row;
+            height: 75vh;
+            gap: 3%;
+            align-items: center;
+            justify-content: center;
+            padding: 2%;
         }
 
-        #testimonialHeader{
+        #testimonials .experienceCard{
+            padding: 5%;
+        }
+        
+        #testimonials #testimonialHeader{
+            flex-direction: column;
+            width: 45%;
+            height: 65%;
+            justify-content: space-between;
             align-self: flex-start;
-        } */
+            padding-top: 5%;
+            padding-left: 2%;
+        }
+
+        #testimonials #testimonialHeader h1{
+            font-size: 250%;
+        }
+
+        #testimonials #testimonialHeader #quote{
+            height: 60%;
+        }
+
+        #testimonials #testimonialHeader #decorQuote{
+            position: absolute;
+            height: 20%;
+            top: 10px;
+            left: -50px;
+        }
+        
+        #testimonials #testimonialHeader .experienceCard{
+            display: flex;
+            width: 85%;
+        }
+        
+        #testimonials #testimonialCardContainer{
+            width: 45%;
+            height: 100%;
+            justify-content: center;
+        }
+
+        #testimonials #testimonialCardContainer .experienceCard:first-of-type{
+            display: none;
+        }
         
 
         
@@ -819,6 +871,10 @@ export default {
             height: fit-content;
             padding: 0 2%;
             justify-content: space-evenly;
+        }
+
+        #allRestaurants .headerContainer{
+            padding-top: 5%;
         }
 
         #allRestaurants .cardContainer .headerContainer{
