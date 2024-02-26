@@ -86,4 +86,9 @@ export default {
         margin: 10px 0;
     }
 
+    @media screen and (min-width: 600px) {
+        #privacyPolicyContainer #content h1, #privacyPolicyContainer .headerContainer h1:last-of-type{
+            font-size: large;
+        }
+    }
 </style>

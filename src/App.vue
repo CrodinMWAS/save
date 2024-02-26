@@ -110,7 +110,6 @@ export default{
 
   nav .navButtonsContainer{
     display: none;
-    /* display: flex; */
     flex-direction: column;
     width: 100vw;
     height: 100vh;
@@ -121,8 +120,8 @@ export default{
   .showButtons{
     height: 100vh;
   }
-  .showButtons .navButtonsContainer{
-    display: flex !important;
+  nav .navButtonsContainer .showButtons .navButtonsContainer{
+    display: flex;
   }
 
   nav .navButtonsContainer h2{
@@ -167,6 +166,7 @@ export default{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-size: 120%;
   }
 
   #footer #infoColumn a{
@@ -182,10 +182,6 @@ export default{
 
   #footer #infoColumn h3, #footer #infoColumn h5{
     font-weight: normal;
-  }
-
-  #footer #infoColumn h5{
-    color: grey;
   }
 
   #footer #socialsColumn{
@@ -222,9 +218,15 @@ export default{
   }
 
   @media screen and (min-width: 600px) {
+    #footer{
+      padding: 3% 5%;
+    }
     #footer #infoColumn{
       width: 95%;
     }
+  }
+
+  @media screen and (min-width: 700px) {
     #footer #infoColumn #contactContainer{
       display: flex;
       gap: 20px;

@@ -271,7 +271,7 @@ export default {
         
         #contactInformationContainer #dataContainer{
             width: 100%;
-            font-size: 140%;
+            font-size: 120%;
         }
         
         #contactInformationContainer .headerContainer h1{
@@ -298,13 +298,12 @@ export default {
         =============================================*/
         
         
-        
         #informationContainer{
             width: 60%;
         }
         
         #informationContainer input, #informationContainer textarea{
-            padding: 3%;
+            padding: 2%;
         }
         
         #informationContainer button{
