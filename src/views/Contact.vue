@@ -246,6 +246,7 @@ export default {
             bottom: 60px;
             right: 75px;
         } 
+
         #informationContainer input, #informationContainer textarea{
             padding: 2%;
         }
@@ -266,9 +267,9 @@ export default {
             display: flex;
         }
         
-        /*=============================================
-        =            Style of the purple Block            =
-        =============================================*/
+        /*================================================================================
+        =            Style of the the Purple box (conctactInformationContainer)           =
+        =================================================================================*/
         
         #contactInformationContainer{
             padding: 2%;
@@ -283,6 +284,7 @@ export default {
         #contactInformationContainer .headerContainer h1{
             font-size: 200%;
         }
+
         #contactInformationContainer .headerContainer h2{
             font-size: 140%;
         }
@@ -296,12 +298,23 @@ export default {
             aspect-ratio: 1;
         }
         
+        #contactInformationContainer #bottomCircle1{
+            width: 250px;
+            bottom: -70px;
+            right: -80px;
+        }
+        #contactInformationContainer #bottomCircle2{
+            width: 125px;
+            bottom: 80px;
+            right: 80px;
+        }
+
         /*=====  End of Style of the purple Block  ======*/
 
         
-        /*=============================================
+        /*=====================================================
         =            Style of the Contact Us section            =
-        =============================================*/
+        ========================================================*/
         
         
         #informationContainer{
@@ -317,17 +330,6 @@ export default {
         }
         
         /*=====  End of Style of the Contact Us section  ======*/
-
-        #contactInformationContainer #bottomCircle1{
-            width: 250px;
-            bottom: -70px;
-            right: -80px;
-        }
-        #contactInformationContainer #bottomCircle2{
-            width: 125px;
-            bottom: 80px;
-            right: 80px;
-        }
     }
 
 /*=====  End of Media Queries  ======*/

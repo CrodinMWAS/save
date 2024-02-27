@@ -307,6 +307,7 @@ export default {
         user-select: none;
         border: none;
     }
+
     #hero #heroTextContainer #exploreButton svg{
         fill: white;
         transition: all 0.2s ease-in-out;
@@ -504,6 +505,8 @@ export default {
     .searchButton{
         border: none;
     }
+    
+/*----------  Style Of The Advanced Search  ----------*/
 
     .advancedSearch #inputs{
         display: flex;
@@ -569,6 +572,9 @@ export default {
     
 /*=====  End of Style for changing the search type (advanced/simple)  ======*/
 
+
+/*----------  Style Of The simple Search  ----------*/
+
     .searchArea{
         justify-content: center;
         align-items: center;
@@ -601,7 +607,6 @@ export default {
     .searchArea #searchBar input:focus{
         outline: none;
     }
-
     .searchArea #searchBar #filterIcon:hover{
         scale: 1.2;
         cursor: pointer;
@@ -684,15 +689,18 @@ export default {
         #feedbacks #feedbackHeader{
             padding-top: 0;
         }
+
         #feedbacks #feedbackHeader #decorQuote{
             position: absolute;
             height: 75%;
             top: 0;
             left: 0;
         }
+
         #feedbacks #feedbackHeader h1{
             text-align: left;
         }
+
         .advancedSearch #inputs{
             width: 85%;
         }
@@ -702,6 +710,7 @@ export default {
         .advancedSearch #inputs{
             width: 100%;
         }
+
         #hero #heroTextContainer #exploreButton{
             padding: 20px 50px;
         }
@@ -735,6 +744,7 @@ export default {
         .advancedSearch #inputs{
             flex-direction: row;
         }
+        
         .advancedSearch .searchButton{
             width: initial;
         }
@@ -744,6 +754,7 @@ export default {
         #feedbacks{
             padding: 4%;
         }
+
         #feedbacks #feedbackHeader #decorQuote{
             position: absolute;
             height: 75%;
@@ -795,29 +806,33 @@ export default {
             z-index: -5;
         }
         
-        /*=============================================
-        =            Style Of The Strips            =
-        =============================================*/
+    /*=============================================
+    =            Style Of The Strips            =
+    =============================================*/
 
         .purpleStrip, .divider, .lightPurpleStrip, .lightStrip{
             position: absolute;
             transform:  skew(-3deg); 
             height: 100%;
         }
+
         .purpleStrip{
             background-color: var(--purpleColor);
         }
+
         .divider{
             background-color: var(--dividerColor);
         }
+
         .lightPurpleStrip{
             background-color: var(--lightStripColor);
         }
+
         .lightStrip{
             background-color: var(--lightPurpleColor);
         }
         
-            /*----------  Style of Strip In the Middle  ----------*/
+    /*----------  Style of Strip In the Middle  ----------*/
 
         #middleStrip{
             position: absolute;
@@ -828,19 +843,22 @@ export default {
             left: -10px;
             bottom: 25%;
         }
+
         #middleStrip > .purpleStrip{
             width: 30%;
         }
+
         #middleStrip > .divider{
             width: 30%;
             left: 30%;
         }
+
         #middleStrip > .lightPurpleStrip{
             width: 40%;
             left: 60%;
         }
 
-        /*----------  Style of Strip On the Bottom  ----------*/
+    /*----------  Style of Strip On the Bottom  ----------*/
 
         #bottomStrip{
             position: absolute;
@@ -851,15 +869,17 @@ export default {
             left: -10px;
             bottom: -59px;
         }
+
         #bottomStrip .lightStrip{
             width: 18%;
         }
+
         #bottomStrip .purpleStrip{
             width: 40%;
             left: 89%;
         }
 
-        /*----------  Style of Strip On the Top ----------*/
+    /*----------  Style of Strip On the Top ----------*/
 
         #topStrip{
             position: absolute;
@@ -870,14 +890,15 @@ export default {
             top: -60px;
             left: -10px;
         }
+
         #topStrip .lightStrip{
             left: 75%;
             width: 20%;
         }
 
-        /*=====  End of Style Of The Strips  ======*/
+    /*=====  End of Style Of The Strips  ======*/
         
-        /*----------  Featured Restaurants Section  ----------*/
+    /*----------  Featured Restaurants Section  ----------*/
 
         #featuredRestaurants{
             padding: 0 2%;
@@ -885,19 +906,16 @@ export default {
 
         #featuredRestaurants .headerContainer{
             margin-bottom: 25px;
-        }
-        
-        #featuredRestaurants .cardContainer{
-            padding: 0 5%;
-        }
-
-        #featuredRestaurants .headerContainer{
             text-align: left;
             height: 15%;
         }
 
         #featuredRestaurants .headerContainer h2{
             margin: 0;
+        }
+        
+        #featuredRestaurants .cardContainer{
+            padding: 0 5%;
         }
 
         .cardContainer{
@@ -948,7 +966,7 @@ export default {
             left: -280px;
         }
 
-        /*----------  feedbacks Section ----------*/
+    /*----------  feedbacks Section ----------*/
 
         #feedbacks{
             display: flex;
@@ -957,10 +975,6 @@ export default {
             align-items: center;
             justify-content: center;
             padding: 2%;
-        }
-
-        #feedbacks .experienceCard{
-            padding: 5%;
         }
         
         #feedbacks #feedbackHeader{
@@ -992,6 +1006,10 @@ export default {
             display: flex;
             width: 85%;
         }
+
+        #feedbacks .experienceCard{
+            padding: 5%;
+        }
         
         #feedbacks #feedbackCardContainer{
             width: 45%;
@@ -1003,9 +1021,7 @@ export default {
             display: none;
         }
         
-
-        
-        /*----------  Style of the Allrestaurants section  ----------*/
+    /*----------  Style of the Allrestaurants section  ----------*/
         
         #allRestaurants{
             height: fit-content;
@@ -1017,19 +1033,10 @@ export default {
             padding-top: 5%;
         }
 
-        #allRestaurants .cardContainer .headerContainer{
-            height: 35%;
-        }
-
         #allRestaurants .cardContainer{
             height: 60%;
             flex-wrap: wrap;
             justify-content: center;
-        }
-        
-        #allRestaurants .cardContainer .toggleRestaurantsButton{
-            height: 15%;
-            margin: 0;
         }
 
         #allRestaurants .cardContainer .card{
@@ -1082,6 +1089,7 @@ export default {
         #hero #heroTextContainer p{
             font-size: larger;
         }
+
         #feedbacks #feedbackHeader #decorQuote{
             left: -45px;
             top: 25px;
@@ -1100,6 +1108,7 @@ export default {
         #hero #heroTextContainer p{
             font-size: x-large;
         }
+        
         #feedbacks #feedbackHeader #decorQuote{
             left: -40px;
             top: 35px;
